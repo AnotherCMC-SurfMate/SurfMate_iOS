@@ -1,0 +1,780 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6007EA24FDEADCE2C4006BC7 /* Pods_SurfMate_iOS_SurfMate_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA83BC9F2FDB5B5BA821685 /* Pods_SurfMate_iOS_SurfMate_iOSUITests.framework */; };
+		844652E0A0CE2CAA9170DA0A /* Pods_SurfMate_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87795A4B21B29CC69603F003 /* Pods_SurfMate_iOS.framework */; };
+		A9472530A82EE8B0A155F040 /* Pods_SurfMate_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E0C16F896A8E8F031D2713 /* Pods_SurfMate_iOSTests.framework */; };
+		BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21078129373F7B008E99D2 /* AppDelegate.swift */; };
+		BF21078429373F7B008E99D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21078329373F7B008E99D2 /* SceneDelegate.swift */; };
+		BF21078629373F7B008E99D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21078529373F7B008E99D2 /* ViewController.swift */; };
+		BF21078929373F7B008E99D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF21078729373F7B008E99D2 /* Main.storyboard */; };
+		BF21078B29373F7C008E99D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF21078A29373F7C008E99D2 /* Assets.xcassets */; };
+		BF21078E29373F7C008E99D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF21078C29373F7C008E99D2 /* LaunchScreen.storyboard */; };
+		BF21079929373F7C008E99D2 /* SurfMate_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21079829373F7C008E99D2 /* SurfMate_iOSTests.swift */; };
+		BF2107A329373F7C008E99D2 /* SurfMate_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */; };
+		BF2107A529373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF21079529373F7C008E99D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF21077629373F7A008E99D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF21077D29373F7A008E99D2;
+			remoteInfo = SurfMate_iOS;
+		};
+		BF21079F29373F7C008E99D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF21077629373F7A008E99D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF21077D29373F7A008E99D2;
+			remoteInfo = SurfMate_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E3FB102429D4E6CF601A2D2 /* Pods-SurfMate_iOS-SurfMate_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOS-SurfMate_iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOS-SurfMate_iOSUITests/Pods-SurfMate_iOS-SurfMate_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		39CB1F36850D49EA0905784B /* Pods-SurfMate_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOSTests/Pods-SurfMate_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3D10511C8705B414B2A99B98 /* Pods-SurfMate_iOS-SurfMate_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOS-SurfMate_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOS-SurfMate_iOSUITests/Pods-SurfMate_iOS-SurfMate_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		87795A4B21B29CC69603F003 /* Pods_SurfMate_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurfMate_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF21077E29373F7B008E99D2 /* SurfMate_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfMate_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF21078129373F7B008E99D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF21078329373F7B008E99D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BF21078529373F7B008E99D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF21078829373F7B008E99D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF21078A29373F7C008E99D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF21078D29373F7C008E99D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF21078F29373F7C008E99D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF21079429373F7C008E99D2 /* SurfMate_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurfMate_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF21079829373F7C008E99D2 /* SurfMate_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSTests.swift; sourceTree = "<group>"; };
+		BF21079E29373F7C008E99D2 /* SurfMate_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurfMate_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITests.swift; sourceTree = "<group>"; };
+		BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C44FA7E5733A26BEFCF85E72 /* Pods-SurfMate_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOS.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOS/Pods-SurfMate_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		DA8010D93A898C9183861474 /* Pods-SurfMate_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOSTests/Pods-SurfMate_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		E9E0C16F896A8E8F031D2713 /* Pods_SurfMate_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurfMate_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA2FEF0C8177E2EF4B0894E0 /* Pods-SurfMate_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOS.debug.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOS/Pods-SurfMate_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FEA83BC9F2FDB5B5BA821685 /* Pods_SurfMate_iOS_SurfMate_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurfMate_iOS_SurfMate_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF21077B29373F7A008E99D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844652E0A0CE2CAA9170DA0A /* Pods_SurfMate_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF21079129373F7C008E99D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9472530A82EE8B0A155F040 /* Pods_SurfMate_iOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF21079B29373F7C008E99D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6007EA24FDEADCE2C4006BC7 /* Pods_SurfMate_iOS_SurfMate_iOSUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E7D910A9CC33A58D4B7CF20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87795A4B21B29CC69603F003 /* Pods_SurfMate_iOS.framework */,
+				FEA83BC9F2FDB5B5BA821685 /* Pods_SurfMate_iOS_SurfMate_iOSUITests.framework */,
+				E9E0C16F896A8E8F031D2713 /* Pods_SurfMate_iOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6685B1822DB61637D1493CF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA2FEF0C8177E2EF4B0894E0 /* Pods-SurfMate_iOS.debug.xcconfig */,
+				C44FA7E5733A26BEFCF85E72 /* Pods-SurfMate_iOS.release.xcconfig */,
+				1E3FB102429D4E6CF601A2D2 /* Pods-SurfMate_iOS-SurfMate_iOSUITests.debug.xcconfig */,
+				3D10511C8705B414B2A99B98 /* Pods-SurfMate_iOS-SurfMate_iOSUITests.release.xcconfig */,
+				39CB1F36850D49EA0905784B /* Pods-SurfMate_iOSTests.debug.xcconfig */,
+				DA8010D93A898C9183861474 /* Pods-SurfMate_iOSTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF21077529373F7A008E99D2 = {
+			isa = PBXGroup;
+			children = (
+				BF21078029373F7B008E99D2 /* SurfMate_iOS */,
+				BF21079729373F7C008E99D2 /* SurfMate_iOSTests */,
+				BF2107A129373F7C008E99D2 /* SurfMate_iOSUITests */,
+				BF21077F29373F7B008E99D2 /* Products */,
+				6685B1822DB61637D1493CF6 /* Pods */,
+				1E7D910A9CC33A58D4B7CF20 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF21077F29373F7B008E99D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF21077E29373F7B008E99D2 /* SurfMate_iOS.app */,
+				BF21079429373F7C008E99D2 /* SurfMate_iOSTests.xctest */,
+				BF21079E29373F7C008E99D2 /* SurfMate_iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF21078029373F7B008E99D2 /* SurfMate_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BF21078129373F7B008E99D2 /* AppDelegate.swift */,
+				BF21078329373F7B008E99D2 /* SceneDelegate.swift */,
+				BF21078529373F7B008E99D2 /* ViewController.swift */,
+				BF21078729373F7B008E99D2 /* Main.storyboard */,
+				BF21078A29373F7C008E99D2 /* Assets.xcassets */,
+				BF21078C29373F7C008E99D2 /* LaunchScreen.storyboard */,
+				BF21078F29373F7C008E99D2 /* Info.plist */,
+			);
+			path = SurfMate_iOS;
+			sourceTree = "<group>";
+		};
+		BF21079729373F7C008E99D2 /* SurfMate_iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF21079829373F7C008E99D2 /* SurfMate_iOSTests.swift */,
+			);
+			path = SurfMate_iOSTests;
+			sourceTree = "<group>";
+		};
+		BF2107A129373F7C008E99D2 /* SurfMate_iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */,
+				BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */,
+			);
+			path = SurfMate_iOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF21077D29373F7A008E99D2 /* SurfMate_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF2107A829373F7C008E99D2 /* Build configuration list for PBXNativeTarget "SurfMate_iOS" */;
+			buildPhases = (
+				B05CD4074414ADF9ABC4C3BF /* [CP] Check Pods Manifest.lock */,
+				BF21077A29373F7A008E99D2 /* Sources */,
+				BF21077B29373F7A008E99D2 /* Frameworks */,
+				BF21077C29373F7A008E99D2 /* Resources */,
+				C783A961CEAE150F886C7687 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SurfMate_iOS;
+			productName = SurfMate_iOS;
+			productReference = BF21077E29373F7B008E99D2 /* SurfMate_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF21079329373F7C008E99D2 /* SurfMate_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF2107AB29373F7C008E99D2 /* Build configuration list for PBXNativeTarget "SurfMate_iOSTests" */;
+			buildPhases = (
+				C1911CC0308CB1ED94680670 /* [CP] Check Pods Manifest.lock */,
+				BF21079029373F7C008E99D2 /* Sources */,
+				BF21079129373F7C008E99D2 /* Frameworks */,
+				BF21079229373F7C008E99D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF21079629373F7C008E99D2 /* PBXTargetDependency */,
+			);
+			name = SurfMate_iOSTests;
+			productName = SurfMate_iOSTests;
+			productReference = BF21079429373F7C008E99D2 /* SurfMate_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF21079D29373F7C008E99D2 /* SurfMate_iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF2107AE29373F7C008E99D2 /* Build configuration list for PBXNativeTarget "SurfMate_iOSUITests" */;
+			buildPhases = (
+				148282012961A37F73F364F1 /* [CP] Check Pods Manifest.lock */,
+				BF21079A29373F7C008E99D2 /* Sources */,
+				BF21079B29373F7C008E99D2 /* Frameworks */,
+				BF21079C29373F7C008E99D2 /* Resources */,
+				A83ED9F4C2D26748E0501F21 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF2107A029373F7C008E99D2 /* PBXTargetDependency */,
+			);
+			name = SurfMate_iOSUITests;
+			productName = SurfMate_iOSUITests;
+			productReference = BF21079E29373F7C008E99D2 /* SurfMate_iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF21077629373F7A008E99D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					BF21077D29373F7A008E99D2 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					BF21079329373F7C008E99D2 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = BF21077D29373F7A008E99D2;
+					};
+					BF21079D29373F7C008E99D2 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = BF21077D29373F7A008E99D2;
+					};
+				};
+			};
+			buildConfigurationList = BF21077929373F7A008E99D2 /* Build configuration list for PBXProject "SurfMate_iOS" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF21077529373F7A008E99D2;
+			productRefGroup = BF21077F29373F7B008E99D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF21077D29373F7A008E99D2 /* SurfMate_iOS */,
+				BF21079329373F7C008E99D2 /* SurfMate_iOSTests */,
+				BF21079D29373F7C008E99D2 /* SurfMate_iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF21077C29373F7A008E99D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF21078E29373F7C008E99D2 /* LaunchScreen.storyboard in Resources */,
+				BF21078B29373F7C008E99D2 /* Assets.xcassets in Resources */,
+				BF21078929373F7B008E99D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF21079229373F7C008E99D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF21079C29373F7C008E99D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		148282012961A37F73F364F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SurfMate_iOS-SurfMate_iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A83ED9F4C2D26748E0501F21 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SurfMate_iOS-SurfMate_iOSUITests/Pods-SurfMate_iOS-SurfMate_iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SurfMate_iOS-SurfMate_iOSUITests/Pods-SurfMate_iOS-SurfMate_iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SurfMate_iOS-SurfMate_iOSUITests/Pods-SurfMate_iOS-SurfMate_iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B05CD4074414ADF9ABC4C3BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SurfMate_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1911CC0308CB1ED94680670 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SurfMate_iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C783A961CEAE150F886C7687 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SurfMate_iOS/Pods-SurfMate_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SurfMate_iOS/Pods-SurfMate_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SurfMate_iOS/Pods-SurfMate_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF21077A29373F7A008E99D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF21078629373F7B008E99D2 /* ViewController.swift in Sources */,
+				BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */,
+				BF21078429373F7B008E99D2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF21079029373F7C008E99D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF21079929373F7C008E99D2 /* SurfMate_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF21079A29373F7C008E99D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF2107A329373F7C008E99D2 /* SurfMate_iOSUITests.swift in Sources */,
+				BF2107A529373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF21079629373F7C008E99D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF21077D29373F7A008E99D2 /* SurfMate_iOS */;
+			targetProxy = BF21079529373F7C008E99D2 /* PBXContainerItemProxy */;
+		};
+		BF2107A029373F7C008E99D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF21077D29373F7A008E99D2 /* SurfMate_iOS */;
+			targetProxy = BF21079F29373F7C008E99D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF21078729373F7B008E99D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF21078829373F7B008E99D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF21078C29373F7C008E99D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF21078D29373F7C008E99D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF2107A629373F7C008E99D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF2107A729373F7C008E99D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF2107A929373F7C008E99D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA2FEF0C8177E2EF4B0894E0 /* Pods-SurfMate_iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GX47BK9CV6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SurfMate_iOS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anotherCMC.SurfMate-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BF2107AA29373F7C008E99D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C44FA7E5733A26BEFCF85E72 /* Pods-SurfMate_iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GX47BK9CV6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SurfMate_iOS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anotherCMC.SurfMate-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		BF2107AC29373F7C008E99D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39CB1F36850D49EA0905784B /* Pods-SurfMate_iOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GX47BK9CV6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anotherCMC.SurfMate-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SurfMate_iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SurfMate_iOS";
+			};
+			name = Debug;
+		};
+		BF2107AD29373F7C008E99D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA8010D93A898C9183861474 /* Pods-SurfMate_iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GX47BK9CV6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anotherCMC.SurfMate-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SurfMate_iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SurfMate_iOS";
+			};
+			name = Release;
+		};
+		BF2107AF29373F7C008E99D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E3FB102429D4E6CF601A2D2 /* Pods-SurfMate_iOS-SurfMate_iOSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GX47BK9CV6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anotherCMC.SurfMate-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = SurfMate_iOS;
+			};
+			name = Debug;
+		};
+		BF2107B029373F7C008E99D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D10511C8705B414B2A99B98 /* Pods-SurfMate_iOS-SurfMate_iOSUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GX47BK9CV6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anotherCMC.SurfMate-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = SurfMate_iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF21077929373F7A008E99D2 /* Build configuration list for PBXProject "SurfMate_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF2107A629373F7C008E99D2 /* Debug */,
+				BF2107A729373F7C008E99D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF2107A829373F7C008E99D2 /* Build configuration list for PBXNativeTarget "SurfMate_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF2107A929373F7C008E99D2 /* Debug */,
+				BF2107AA29373F7C008E99D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF2107AB29373F7C008E99D2 /* Build configuration list for PBXNativeTarget "SurfMate_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF2107AC29373F7C008E99D2 /* Debug */,
+				BF2107AD29373F7C008E99D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF2107AE29373F7C008E99D2 /* Build configuration list for PBXNativeTarget "SurfMate_iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF2107AF29373F7C008E99D2 /* Debug */,
+				BF2107B029373F7C008E99D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF21077629373F7A008E99D2 /* Project object */;
+}
