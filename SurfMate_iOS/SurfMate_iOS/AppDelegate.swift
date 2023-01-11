@@ -7,6 +7,9 @@
 
 import UIKit
 import Firebase
+import KakaoSDKAuth
+import KakaoSDKCommon
+import NaverThirdPartyLogin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
+        
+        KakaoSDK.initSDK(appKey: "fd4f047eab7ab4e35759cf2d95f6e908")
+        
+        let instance = NaverThirdPartyLoginConnection.getSharedInstance()
+        
+        instance?.isInAppOauthEnable = true
+        instance?.isNaverAppOauthEnable = true
+        instance?.serviceUrlScheme = "surfmatenaverlogin"
+        instance?.consumerKey = "u_Uq19f7ZyJ5pIr_atnY"
+        instance?.appName = "SurfMate"
+        instance?.consumerSecret = "AVHFbflBYM"
         
         return true
     }
