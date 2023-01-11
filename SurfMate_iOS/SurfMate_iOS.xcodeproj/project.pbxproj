@@ -58,6 +58,7 @@
 		BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITests.swift; sourceTree = "<group>"; };
 		BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BFB6F000296E8DDE00C4EDC3 /* SurfMate_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SurfMate_iOS.entitlements; sourceTree = "<group>"; };
 		C44FA7E5733A26BEFCF85E72 /* Pods-SurfMate_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOS.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOS/Pods-SurfMate_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DA8010D93A898C9183861474 /* Pods-SurfMate_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOSTests/Pods-SurfMate_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E9E0C16F896A8E8F031D2713 /* Pods_SurfMate_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurfMate_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +142,7 @@
 		BF21078029373F7B008E99D2 /* SurfMate_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BFB6F000296E8DDE00C4EDC3 /* SurfMate_iOS.entitlements */,
 				BF21078129373F7B008E99D2 /* AppDelegate.swift */,
 				BF21078329373F7B008E99D2 /* SceneDelegate.swift */,
 				BF21078529373F7B008E99D2 /* ViewController.swift */,
@@ -588,6 +590,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SurfMate_iOS/SurfMate_iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GX47BK9CV6;
@@ -620,6 +623,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SurfMate_iOS/SurfMate_iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GX47BK9CV6;
