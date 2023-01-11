@@ -19,6 +19,7 @@
 		BF21079929373F7C008E99D2 /* SurfMate_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21079829373F7C008E99D2 /* SurfMate_iOSTests.swift */; };
 		BF2107A329373F7C008E99D2 /* SurfMate_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */; };
 		BF2107A529373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */; };
+		BF5B39AA296E4FEC009ED5DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		BF21079E29373F7C008E99D2 /* SurfMate_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurfMate_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITests.swift; sourceTree = "<group>"; };
 		BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C44FA7E5733A26BEFCF85E72 /* Pods-SurfMate_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOS.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOS/Pods-SurfMate_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DA8010D93A898C9183861474 /* Pods-SurfMate_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOSTests/Pods-SurfMate_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E9E0C16F896A8E8F031D2713 /* Pods_SurfMate_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurfMate_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +113,6 @@
 				39CB1F36850D49EA0905784B /* Pods-SurfMate_iOSTests.debug.xcconfig */,
 				DA8010D93A898C9183861474 /* Pods-SurfMate_iOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,6 +147,7 @@
 				BF21078729373F7B008E99D2 /* Main.storyboard */,
 				BF21078A29373F7C008E99D2 /* Assets.xcassets */,
 				BF21078C29373F7C008E99D2 /* LaunchScreen.storyboard */,
+				BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */,
 				BF21078F29373F7C008E99D2 /* Info.plist */,
 			);
 			path = SurfMate_iOS;
@@ -278,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF21078E29373F7C008E99D2 /* LaunchScreen.storyboard in Resources */,
+				BF5B39AA296E4FEC009ED5DD /* GoogleService-Info.plist in Resources */,
 				BF21078B29373F7C008E99D2 /* Assets.xcassets in Resources */,
 				BF21078929373F7B008E99D2 /* Main.storyboard in Resources */,
 			);
