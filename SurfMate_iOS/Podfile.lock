@@ -125,6 +125,10 @@ PODS:
   - KakaoSDKUser (2.13.1):
     - KakaoSDKAuth (= 2.13.1)
   - Kingfisher (7.5.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -153,6 +157,7 @@ DEPENDENCIES:
   - KakaoSDKCommon
   - KakaoSDKUser
   - Kingfisher
+  - Moya
   - naveridlogin-sdk-ios
   - RxCocoa
   - RxSwift
@@ -181,6 +186,7 @@ SPEC REPOS:
     - KakaoSDKCommon
     - KakaoSDKUser
     - Kingfisher
+    - Moya
     - nanopb
     - naveridlogin-sdk-ios
     - PromisesObjC
@@ -211,6 +217,7 @@ SPEC CHECKSUMS:
   KakaoSDKCommon: a16807e19984a0a208c3117c7ef117f101a9a128
   KakaoSDKUser: 92d34cf6af7b123c22a7ee44424332123e356901
   Kingfisher: b9c2a4a4af2990a768445c277359b27bde287d71
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   naveridlogin-sdk-ios: 4351fe7162cd6b8b6dbb37bd7cc205304fa1d889
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
@@ -220,6 +227,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: d59552c7b95ca75a74c2b1ae03baf3fb32505a3a
+PODFILE CHECKSUM: b09080525ad9bf6155b472eea3887d94f127c021
 
 COCOAPODS: 1.11.3
