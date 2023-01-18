@@ -8,25 +8,25 @@
 import Foundation
 import Moya
 
-enum SurfMateAPIService {
+enum HealthAPI {
     case getData(String, String)
 }
 
-extension SurfMateAPIService:TargetType {
+extension HealthAPI:TargetType {
     var baseURL: URL {
-        <#code#>
+        return URL(string: "https:///surfmate.life")!
     }
     
     var path: String {
-        <#code#>
+        return "/health"
     }
     
     var method: Moya.Method {
-        <#code#>
+        return .get
     }
     
     var task: Moya.Task {
-        <#code#>
+        return .requestPlain
     }
     
     var headers: [String : String]? {
