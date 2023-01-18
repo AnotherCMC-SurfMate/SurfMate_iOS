@@ -13,7 +13,7 @@ pod 'KakaoSDKAuth'
 pod 'KakaoSDKUser'
 
 pod 'Alamofire'
-pod 'Moya'
+pod 'Moya/RxSwift'
 pod 'Kingfisher'
 pod 'SnapKit', '~> 5.0.0'
 pod 'Then'
