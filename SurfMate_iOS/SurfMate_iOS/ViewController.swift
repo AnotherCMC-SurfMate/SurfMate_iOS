@@ -12,8 +12,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        HealthRepository.shared.healthCheck {
-            print("success")
+        HealthRepository.shared.healthCheck { result in
+            
+            print(result)
         }
         
         // Do any additional setup after loading the view.

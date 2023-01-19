@@ -43,16 +43,23 @@ final class HealthRepository: BaseRepository<HealthAPI> {
     private override init() {}
     
     
-    func healthCheck(_ completion: @escaping (String?, Error?) -> Void) {
+    func healthCheck(_ completion: @escaping (Result) -> Void) {
         rx.request(.health)
             .filterSuccessfulStatusCodes()
             .subscribe { event in
                 switch event {
                 case .success(let response):
-                    let str = String(data: response.data, encoding: .utf8)!
-                    print(str)
-                case .failure(let error):
-                    print(error)
+                    
+                    let decoder = JSONDecoder()
+                    
+                    if let json = try? decoder.decode(DataResponse.self, from: response.data) {
+                        print(json)
+                    }
+                    
+                case .failure(_):
+                    var result = Result()
+                    result.error = SurfMateError()
+                    completion(result)
                 }
             }
             .disposed(by: disposeBag)

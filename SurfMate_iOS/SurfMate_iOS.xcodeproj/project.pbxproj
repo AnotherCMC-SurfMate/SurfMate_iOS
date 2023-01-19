@@ -10,6 +10,7 @@
 		6007EA24FDEADCE2C4006BC7 /* Pods_SurfMate_iOS_SurfMate_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA83BC9F2FDB5B5BA821685 /* Pods_SurfMate_iOS_SurfMate_iOSUITests.framework */; };
 		844652E0A0CE2CAA9170DA0A /* Pods_SurfMate_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87795A4B21B29CC69603F003 /* Pods_SurfMate_iOS.framework */; };
 		A9472530A82EE8B0A155F040 /* Pods_SurfMate_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E0C16F896A8E8F031D2713 /* Pods_SurfMate_iOSTests.framework */; };
+		BF1C8B242978F292008E6FE5 /* FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C8B232978F292008E6FE5 /* FoundationExtension.swift */; };
 		BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21078129373F7B008E99D2 /* AppDelegate.swift */; };
 		BF21078429373F7B008E99D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21078329373F7B008E99D2 /* SceneDelegate.swift */; };
 		BF21078629373F7B008E99D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21078529373F7B008E99D2 /* ViewController.swift */; };
@@ -21,7 +22,7 @@
 		BF2107A529373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */; };
 		BF5B39AA296E4FEC009ED5DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */; };
 		BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDFDAD629778E1500D0D5C2 /* BaseRepository.swift */; };
-		BFE2A7E229750582006D8EC1 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE2A7E129750581006D8EC1 /* DataResponse.swift */; };
+		BFE2A7E229750582006D8EC1 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE2A7E129750581006D8EC1 /* APIModel.swift */; };
 		BFE2A7E4297505CD006D8EC1 /* HealthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE2A7E3297505CD006D8EC1 /* HealthRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		39CB1F36850D49EA0905784B /* Pods-SurfMate_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOSTests/Pods-SurfMate_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D10511C8705B414B2A99B98 /* Pods-SurfMate_iOS-SurfMate_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOS-SurfMate_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOS-SurfMate_iOSUITests/Pods-SurfMate_iOS-SurfMate_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		87795A4B21B29CC69603F003 /* Pods_SurfMate_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurfMate_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1C8B232978F292008E6FE5 /* FoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtension.swift; sourceTree = "<group>"; };
 		BF21077E29373F7B008E99D2 /* SurfMate_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfMate_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF21078129373F7B008E99D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF21078329373F7B008E99D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFB6F000296E8DDE00C4EDC3 /* SurfMate_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SurfMate_iOS.entitlements; sourceTree = "<group>"; };
 		BFDFDAD629778E1500D0D5C2 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
-		BFE2A7E129750581006D8EC1 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
+		BFE2A7E129750581006D8EC1 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		BFE2A7E3297505CD006D8EC1 /* HealthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRepository.swift; sourceTree = "<group>"; };
 		C44FA7E5733A26BEFCF85E72 /* Pods-SurfMate_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOS.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOS/Pods-SurfMate_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DA8010D93A898C9183861474 /* Pods-SurfMate_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOSTests/Pods-SurfMate_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF1C8B222978F27C008E6FE5 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BF1C8B232978F292008E6FE5 /* FoundationExtension.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		BF21077529373F7A008E99D2 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 		BF21078029373F7B008E99D2 /* SurfMate_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BF1C8B222978F27C008E6FE5 /* Util */,
 				BFDFDAD5297788E900D0D5C2 /* Model */,
 				BFDFDAD42977888F00D0D5C2 /* API */,
 				BFB6F000296E8DDE00C4EDC3 /* SurfMate_iOS.entitlements */,
@@ -159,7 +170,6 @@
 				BF21078C29373F7C008E99D2 /* LaunchScreen.storyboard */,
 				BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */,
 				BF21078F29373F7C008E99D2 /* Info.plist */,
-				BFE2A7E129750581006D8EC1 /* DataResponse.swift */,
 			);
 			path = SurfMate_iOS;
 			sourceTree = "<group>";
@@ -193,6 +203,7 @@
 		BFDFDAD5297788E900D0D5C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BFE2A7E129750581006D8EC1 /* APIModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,8 +452,9 @@
 				BF21078629373F7B008E99D2 /* ViewController.swift in Sources */,
 				BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */,
 				BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */,
-				BFE2A7E229750582006D8EC1 /* DataResponse.swift in Sources */,
+				BFE2A7E229750582006D8EC1 /* APIModel.swift in Sources */,
 				BF21078429373F7B008E99D2 /* SceneDelegate.swift in Sources */,
+				BF1C8B242978F292008E6FE5 /* FoundationExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
