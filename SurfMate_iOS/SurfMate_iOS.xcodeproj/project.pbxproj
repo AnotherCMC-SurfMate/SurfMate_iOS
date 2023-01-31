@@ -20,6 +20,7 @@
 		BF21079929373F7C008E99D2 /* SurfMate_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21079829373F7C008E99D2 /* SurfMate_iOSTests.swift */; };
 		BF2107A329373F7C008E99D2 /* SurfMate_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */; };
 		BF2107A529373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */; };
+		BF4821DF297A3048005C7DE9 /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4821DE297A3048005C7DE9 /* HealthModel.swift */; };
 		BF5B39AA296E4FEC009ED5DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */; };
 		BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDFDAD629778E1500D0D5C2 /* BaseRepository.swift */; };
 		BFE2A7E229750582006D8EC1 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE2A7E129750581006D8EC1 /* APIModel.swift */; };
@@ -62,6 +63,7 @@
 		BF21079E29373F7C008E99D2 /* SurfMate_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurfMate_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITests.swift; sourceTree = "<group>"; };
 		BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BF4821DE297A3048005C7DE9 /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
 		BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFB6F000296E8DDE00C4EDC3 /* SurfMate_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SurfMate_iOS.entitlements; sourceTree = "<group>"; };
 		BFDFDAD629778E1500D0D5C2 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
@@ -125,10 +127,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		BF1C8B222978F27C008E6FE5 /* Util */ = {
+		BF0E29EE2988D98800E95FC4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				BF1C8B232978F292008E6FE5 /* FoundationExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BF1C8B222978F27C008E6FE5 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BF0E29EE2988D98800E95FC4 /* Extension */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -204,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				BFE2A7E129750581006D8EC1 /* APIModel.swift */,
+				BF4821DE297A3048005C7DE9 /* HealthModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -451,6 +462,7 @@
 				BFE2A7E4297505CD006D8EC1 /* HealthRepository.swift in Sources */,
 				BF21078629373F7B008E99D2 /* ViewController.swift in Sources */,
 				BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */,
+				BF4821DF297A3048005C7DE9 /* HealthModel.swift in Sources */,
 				BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */,
 				BFE2A7E229750582006D8EC1 /* APIModel.swift in Sources */,
 				BF21078429373F7B008E99D2 /* SceneDelegate.swift in Sources */,
