@@ -42,7 +42,6 @@ final class HealthRepository: BaseRepository<HealthAPI> {
     
     private override init() {}
     
-    
     func healthCheck(_ completion: @escaping (Result) -> Void) {
         rx.request(.health)
             .filterSuccessfulStatusCodes()
