@@ -10,6 +10,7 @@ import Firebase
 import KakaoSDKAuth
 import KakaoSDKCommon
 import NaverThirdPartyLogin
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         instance?.consumerKey = "u_Uq19f7ZyJ5pIr_atnY"
         instance?.appName = "SurfMate"
         instance?.consumerSecret = "AVHFbflBYM"
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
+            
+        }
+        
+        application.registerForRemoteNotifications()
         
         return true
     }
