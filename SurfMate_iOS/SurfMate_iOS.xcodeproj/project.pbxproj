@@ -19,7 +19,7 @@
 		BF21078929373F7B008E99D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF21078729373F7B008E99D2 /* Main.storyboard */; };
 		BF21078B29373F7C008E99D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF21078A29373F7C008E99D2 /* Assets.xcassets */; };
 		BF21078E29373F7C008E99D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF21078C29373F7C008E99D2 /* LaunchScreen.storyboard */; };
-		BF21079929373F7C008E99D2 /* SurfMate_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21079829373F7C008E99D2 /* SurfMate_iOSTests.swift */; };
+		BF21079929373F7C008E99D2 /* SignUpAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21079829373F7C008E99D2 /* SignUpAPITest.swift */; };
 		BF2107A329373F7C008E99D2 /* SurfMate_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */; };
 		BF2107A529373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */; };
 		BF5B39AA296E4FEC009ED5DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */; };
@@ -64,7 +64,7 @@
 		BF21078D29373F7C008E99D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF21078F29373F7C008E99D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF21079429373F7C008E99D2 /* SurfMate_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurfMate_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF21079829373F7C008E99D2 /* SurfMate_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSTests.swift; sourceTree = "<group>"; };
+		BF21079829373F7C008E99D2 /* SignUpAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPITest.swift; sourceTree = "<group>"; };
 		BF21079E29373F7C008E99D2 /* SurfMate_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurfMate_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITests.swift; sourceTree = "<group>"; };
 		BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		BF21079729373F7C008E99D2 /* SurfMate_iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF21079829373F7C008E99D2 /* SurfMate_iOSTests.swift */,
+				BF21079829373F7C008E99D2 /* SignUpAPITest.swift */,
 			);
 			path = SurfMate_iOSTests;
 			sourceTree = "<group>";
@@ -534,7 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF21079929373F7C008E99D2 /* SurfMate_iOSTests.swift in Sources */,
+				BF21079929373F7C008E99D2 /* SignUpAPITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,17 +16,20 @@ class ViewController: UIViewController {
         PhoneAuthProvider.provider().verifyPhoneNumber("+82 01082836380", uiDelegate: nil) { verificationID, error in
             
             if let id = verificationID {
+                
                 print(id)
+                
             }
             
             if let error = error {
+                
                 print(error)
+                
             }
             
             
         }
         
-        // Do any additional setup after loading the view.
     }
 
 

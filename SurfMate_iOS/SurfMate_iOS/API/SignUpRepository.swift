@@ -10,8 +10,8 @@ import Moya
 import RxSwift
 
 enum SignUpAPI {
-    case defaultSignUp
-    case apiSignUp
+    case checkAcount(num: String)
+    case checkNickname(name: String)
 }
 
 extension SignUpAPI:TargetType {
@@ -20,7 +20,12 @@ extension SignUpAPI:TargetType {
     }
     
     var path: String {
-        return ""
+        switch self {
+        case .checkAcount(_):
+            return "/auth/check/account"
+        case .checkNickname(_):
+            return "/auth/check/nickname"
+        }
     }
     
     var method: Moya.Method {
@@ -28,11 +33,29 @@ extension SignUpAPI:TargetType {
     }
     
     var task: Moya.Task {
-        return .requestPlain
+        
+        switch self {
+        case .checkNickname(let name):
+            let parameters:[String:Any] = ["nickname":name]
+            
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
+        case .checkAcount(let num):
+            let parameters:[String:Any] = ["phNum": num]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        }
+       
     }
     
     var headers: [String : String]? {
-        return nil
+        switch self {
+        case .checkAcount(_):
+            return ["Connection":"keep-alive",
+                    "Content-Type": "application/json"]
+        case .checkNickname(_):
+            return ["Connection":"keep-alive",
+                    "Content-Type": "application/json"]
+        }
     }
     
     
