@@ -9,5 +9,11 @@ import Foundation
 
 struct User: Codable {
     
+    var uid:String
+    var phNum: String
+    var password:String
+    var provider:LoginType
+    var fcmToken: String
+    var nickname:String
     
 }

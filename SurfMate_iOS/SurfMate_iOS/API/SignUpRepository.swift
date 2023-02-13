@@ -12,9 +12,11 @@ import RxSwift
 enum SignUpAPI {
     case checkAcount(num: String)
     case checkNickname(name: String)
+    case signup(user: User)
 }
 
 extension SignUpAPI:TargetType {
+    
     var baseURL: URL {
         return URL(string: "https://surfmate.life")!
     }
@@ -25,6 +27,8 @@ extension SignUpAPI:TargetType {
             return "/auth/check/account"
         case .checkNickname(_):
             return "/auth/check/nickname"
+        case .signup(_):
+            return "/auth/signup"
         }
     }
     
@@ -37,25 +41,32 @@ extension SignUpAPI:TargetType {
         switch self {
         case .checkNickname(let name):
             let parameters:[String:Any] = ["nickname":name]
-            
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
             
         case .checkAcount(let num):
             let parameters:[String:Any] = ["phNum": num]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        
+        case .signup(let user):
+            if user.provider == .normal {
+                let parameters:[String:Any] = ["phNum": user.phNum,
+                                               "nickname":user.nickname,
+                                               "password":user.password,
+                                               "fcmToken":user.fcmToken]
+                return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            } else {
+                let parameters:[String:Any] = ["phNum": user.phNum,
+                                               "nickname":user.nickname,
+                                               "uid":user.uid]
+                return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            }
         }
        
     }
     
     var headers: [String : String]? {
-        switch self {
-        case .checkAcount(_):
-            return ["Connection":"keep-alive",
-                    "Content-Type": "application/json"]
-        case .checkNickname(_):
-            return ["Connection":"keep-alive",
-                    "Content-Type": "application/json"]
-        }
+        return ["Connection":"keep-alive",
+                "Content-Type": "application/json"]
     }
     
     
