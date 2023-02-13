@@ -11,6 +11,7 @@ import KakaoSDKAuth
 import KakaoSDKCommon
 import NaverThirdPartyLogin
 import UserNotifications
+import FirebaseMessaging
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
