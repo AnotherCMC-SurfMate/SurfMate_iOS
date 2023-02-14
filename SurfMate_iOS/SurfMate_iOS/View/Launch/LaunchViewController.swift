@@ -7,8 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import SnapKit
 
-class ViewController: UIViewController {
+class LaunchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
