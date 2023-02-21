@@ -41,4 +41,17 @@ extension UIViewController {
         }
     }
     
+    func showErrorAlert(msg: String) {
+        let alert = UIAlertController(title: "에러", message: msg, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "확인", style: .cancel)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
+    
+}
+
+extension UIColor {
+    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+        return UIColor(red: red / 255, green: green / 255, blue: blue / 255, alpha: 1)
+    }
 }

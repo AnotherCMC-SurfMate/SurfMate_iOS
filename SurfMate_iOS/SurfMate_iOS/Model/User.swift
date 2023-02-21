@@ -9,16 +9,17 @@ import Foundation
 
 struct User: Codable {
     
+    static var loginedUser:User = User()
+    
     var uid:String = ""
-    
     var phNum: String = ""
-    
     var password:String = ""
-    
     var provider:LoginType = .normal
-    
     var fcmToken: String = ""
-    
     var nickname:String = ""
     
+    
+    func clear() {
+        User.loginedUser = User()
+    }
 }

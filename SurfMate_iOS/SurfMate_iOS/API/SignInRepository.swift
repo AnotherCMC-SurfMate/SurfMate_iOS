@@ -9,12 +9,13 @@ import Foundation
 import Moya
 import RxSwift
 
-enum SignIpAPI {
+enum SignInAPI {
     case login(user: User)
     case socialLogin(user: User, token: String)
+    
 }
 
-extension SignIpAPI:TargetType {
+extension SignInAPI:TargetType {
     var baseURL: URL {
         return URL(string: "https://surfmate.life")!
     }

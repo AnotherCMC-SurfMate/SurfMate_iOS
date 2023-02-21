@@ -43,8 +43,9 @@
 		BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDFDAD629778E1500D0D5C2 /* BaseRepository.swift */; };
 		BFE2A7E229750582006D8EC1 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE2A7E129750581006D8EC1 /* APIModel.swift */; };
 		BFE2A7E4297505CD006D8EC1 /* HealthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE2A7E3297505CD006D8EC1 /* HealthRepository.swift */; };
-		BFE5ECDD298A1A2D007DF9CF /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE5ECDC298A1A2D007DF9CF /* SignInViewModel.swift */; };
+		BFE5ECDD298A1A2D007DF9CF /* MainLogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE5ECDC298A1A2D007DF9CF /* MainLogInViewModel.swift */; };
 		BFE5ECE0298A301A007DF9CF /* ModelEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE5ECDF298A301A007DF9CF /* ModelEnum.swift */; };
+		BFE90CF929A457FB00960999 /* Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90CF829A457FB00960999 /* Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +96,9 @@
 		BFDFDAD629778E1500D0D5C2 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		BFE2A7E129750581006D8EC1 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		BFE2A7E3297505CD006D8EC1 /* HealthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRepository.swift; sourceTree = "<group>"; };
-		BFE5ECDC298A1A2D007DF9CF /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		BFE5ECDC298A1A2D007DF9CF /* MainLogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogInViewModel.swift; sourceTree = "<group>"; };
 		BFE5ECDF298A301A007DF9CF /* ModelEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEnum.swift; sourceTree = "<group>"; };
+		BFE90CF829A457FB00960999 /* Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom.swift; sourceTree = "<group>"; };
 		C44FA7E5733A26BEFCF85E72 /* Pods-SurfMate_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOS.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOS/Pods-SurfMate_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DA8010D93A898C9183861474 /* Pods-SurfMate_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurfMate_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-SurfMate_iOSTests/Pods-SurfMate_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E9E0C16F896A8E8F031D2713 /* Pods_SurfMate_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurfMate_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 		BF1C8B222978F27C008E6FE5 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				BFE90CF729A4578E00960999 /* Component */,
 				BFE5ECDE298A1F36007DF9CF /* Enum */,
 				BF0E29EE2988D98800E95FC4 /* Extension */,
 			);
@@ -306,7 +309,7 @@
 		BFE5ECDB298A1A15007DF9CF /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				BFE5ECDC298A1A2D007DF9CF /* SignInViewModel.swift */,
+				BFE5ECDC298A1A2D007DF9CF /* MainLogInViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -317,6 +320,14 @@
 				BFE5ECDF298A301A007DF9CF /* ModelEnum.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		BFE90CF729A4578E00960999 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				BFE90CF829A457FB00960999 /* Custom.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,11 +589,12 @@
 				BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */,
 				BF0E29F02988DBB500E95FC4 /* User.swift in Sources */,
 				BFE2A7E229750582006D8EC1 /* APIModel.swift in Sources */,
-				BFE5ECDD298A1A2D007DF9CF /* SignInViewModel.swift in Sources */,
+				BFE5ECDD298A1A2D007DF9CF /* MainLogInViewModel.swift in Sources */,
 				BF21078429373F7B008E99D2 /* SceneDelegate.swift in Sources */,
 				BFD663A3299B806500A7BC5D /* MainLoginViewController.swift in Sources */,
 				BF1C8B242978F292008E6FE5 /* FoundationExtension.swift in Sources */,
 				BFE5ECE0298A301A007DF9CF /* ModelEnum.swift in Sources */,
+				BFE90CF929A457FB00960999 /* Custom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

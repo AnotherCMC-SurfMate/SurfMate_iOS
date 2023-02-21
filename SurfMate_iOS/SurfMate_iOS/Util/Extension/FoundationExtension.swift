@@ -7,3 +7,11 @@
 
 import Foundation
 
+protocol DefaultViewDelegate {
+    
+    func setUI()
+    func bind()
+    
+    
+    
+}
