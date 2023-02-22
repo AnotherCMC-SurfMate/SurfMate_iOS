@@ -14,22 +14,22 @@ class LaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PhoneAuthProvider.provider().verifyPhoneNumber("+82 01082836380", uiDelegate: nil) { verificationID, error in
-            
-            if let id = verificationID {
-                
-                print(id)
-                
-            }
-            
-            if let error = error {
-                
-                print(error)
-                
-            }
-            
-            
-        }
+//        PhoneAuthProvider.provider().verifyPhoneNumber("+82 01082836380", uiDelegate: nil) { verificationID, error in
+//
+//            if let id = verificationID {
+//
+//                print(id)
+//
+//            }
+//
+//            if let error = error {
+//
+//                print(error)
+//
+//            }
+//
+//
+//        }
         
     }
 

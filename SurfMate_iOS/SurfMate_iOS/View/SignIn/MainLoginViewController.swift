@@ -16,6 +16,7 @@ import AuthenticationServices
 class MainLoginViewController: UIViewController {
     
     let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+    let vm = MainLogInViewModel()
     
     let logoImageView = UIImageView().then {
         $0.backgroundColor = .gray
@@ -46,19 +47,19 @@ class MainLoginViewController: UIViewController {
     
     
     let googleLoginBt = UIButton(type: .custom).then {
-        $0.setImage(UIImage(named: "googleLogo"), for: .normal)
+        $0.setImage(UIImage(named: "google_logo"), for: .normal)
     }
     
     let kakaoLoginBt = UIButton(type: .custom).then {
-        $0.setImage(UIImage(named: "kakaoLogo"), for: .normal)
+        $0.setImage(UIImage(named: "kakao_logo"), for: .normal)
     }
     
     let naverLoginBt = UIButton(type: .custom).then {
-        $0.setImage(UIImage(named: "naverLogo"), for: .normal)
+        $0.setImage(UIImage(named: "naver_logo"), for: .normal)
     }
     
     let appleLoginBt = UIButton(type: .custom).then {
-        $0.setImage(UIImage(named: "appleLogo"), for: .normal)
+        $0.setImage(UIImage(named: "apple_logo"), for: .normal)
     }
     
     override func viewDidLoad() {
@@ -67,10 +68,59 @@ class MainLoginViewController: UIViewController {
         bind()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if let user = User.loginedUser {
+            //자동 로그인
+        }
+        
+    }
     
 }
 
 extension MainLoginViewController: DefaultViewDelegate {
+    
+    
+    func bindInput() {
+        
+        naverLoginInstance?.delegate = self
+        
+        googleLoginBt.rx.tap
+            .map { self }
+            .bind(to: vm.input.googleLoginObserver)
+            .disposed(by: disposeBag)
+        
+        naverLoginBt.rx.tap
+            .subscribe(onNext: {
+                self.naverLoginInstance?.requestThirdPartyLogin()
+            }).disposed(by: disposeBag)
+        
+        appleLoginBt.rx.tap
+            .subscribe(onNext: {
+                self.appleLogin()
+            }).disposed(by: disposeBag)
+        
+        
+        
+        
+    }
+    
+    func bindOutput() {
+     
+        vm.output.errorData
+            .asSignal()
+            .emit(onNext: { msg in
+                self.showErrorAlert(msg: msg)
+            }).disposed(by: disposeBag)
+        
+        vm.output.outputData
+            .asSignal()
+            .emit(onNext: { value in
+                
+            }).disposed(by: disposeBag)
+        
+    }
+    
     
     func setUI() {
         
@@ -125,10 +175,6 @@ extension MainLoginViewController: DefaultViewDelegate {
         
     }
     
-    func bind() {
-        
-    }
-    
     
 }
 
@@ -138,7 +184,7 @@ extension MainLoginViewController: NaverThirdPartyLoginConnectionDelegate {
         guard let isValidAccessToken = naverLoginInstance?.isValidAccessTokenExpireTimeNow() else { return }
         if !isValidAccessToken { return }
         guard let accessToken = naverLoginInstance?.accessToken else { return }
-        //vm.input.naverAppleLoginObserver.accept((accessToken, LoginType.naver))
+        vm.input.naverAppleLoginObserver.accept((accessToken, LoginType.naver))
     }
     
     func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
@@ -176,7 +222,7 @@ extension MainLoginViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
             if let token = String(data: credential.identityToken ?? Data(), encoding: .utf8) {
-                //vm.input.naverAppleLoginObserver.accept((token, .apple))
+                vm.input.naverAppleLoginObserver.accept((token, .apple))
             }
         }
     }

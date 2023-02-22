@@ -9,7 +9,7 @@ import Foundation
 
 struct User: Codable {
     
-    static var loginedUser:User = User()
+    static var loginedUser:User? 
     
     var uid:String = ""
     var phNum: String = ""
