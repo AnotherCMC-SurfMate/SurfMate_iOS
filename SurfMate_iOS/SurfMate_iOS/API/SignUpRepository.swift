@@ -65,6 +65,7 @@ extension SignUpAPI:TargetType {
     }
     
     var headers: [String : String]? {
+        
         return ["Connection":"keep-alive",
                 "Content-Type": "application/json"]
     }

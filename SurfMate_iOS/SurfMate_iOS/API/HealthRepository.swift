@@ -57,7 +57,7 @@ final class HealthRepository: BaseRepository<HealthAPI> {
                     
                 case .failure(_):
                     var result = Result()
-                    result.error = SurfMateError()
+                    result.error = SurfMateError.NetworkError
                     completion(result)
                 }
             }

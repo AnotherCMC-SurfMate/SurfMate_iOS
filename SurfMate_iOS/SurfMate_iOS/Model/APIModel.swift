@@ -30,12 +30,15 @@ struct DataResponse: Decodable {
 
 struct SurfMateError {
     
+    static let NetworkError = SurfMateError(1, "네트워크 연결상태를 확인해주세요.")
+    static let SystemError = SurfMateError(999, "관리자에게 문의해주세요")
+    
     let code: Int
     let message:String
     
-    init() {
-        self.code = 1
-        self.message = "네트워크 연결상태를 확인해주세요."
+    init(_ code: Int, _ message: String) {
+        self.code = code
+        self.message = message
     }
     
     init(_ data: DataResponse) {

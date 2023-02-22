@@ -6,4 +6,31 @@
 //
 
 import Foundation
+import RxSwift
 
+
+protocol DefaultViewDelegate {
+    
+    var disposeBag:DisposeBag { get }
+    
+    func setUI()
+    func bind()
+    
+    func bindInput()
+    
+    func bindOutput()
+    
+    
+    
+}
+
+extension DefaultViewDelegate {
+    func bind() {
+        bindInput()
+        bindOutput()
+    }
+    
+    var disposeBag:DisposeBag {
+        return DisposeBag()
+    }
+}
