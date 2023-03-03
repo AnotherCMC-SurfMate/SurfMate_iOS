@@ -19,6 +19,9 @@ pod 'SnapKit', '~> 5.0.0'
 pod 'Then'
 pod 'RxSwift'
 pod 'RxCocoa'
+pod 'RxGesture'
+#UI
+pod 'TextFieldEffects'
 
 #Firebase
 pod 'Firebase/Auth'

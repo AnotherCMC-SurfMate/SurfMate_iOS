@@ -12,15 +12,10 @@ import RxSwift
 protocol DefaultViewDelegate {
     
     var disposeBag:DisposeBag { get }
-    
     func setUI()
     func bind()
-    
     func bindInput()
-    
     func bindOutput()
-    
-    
     
 }
 
