@@ -17,6 +17,7 @@ class MainLoginViewController: UIViewController {
     
     let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     let vm = MainLogInViewModel()
+    private let disposeBag = DisposeBag()
     
     let logoImageView = UIImageView().then {
         $0.backgroundColor = .gray
@@ -29,15 +30,29 @@ class MainLoginViewController: UIViewController {
     
     let contentView = UIView()
     
-    let loginBT = DefaultButton(text: "로그인", clearColor: false)
-    
-    let signUpBT = DefaultButton(text: "회원가입")
-    
-    let socialLabel = UILabel().then {
-        $0.text = "소셜 로그인"
-        $0.font = UIFont.pretendard(size: 15)
-        $0.textColor = UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1)
+    let loginBT = UIButton(type: .custom).then {
+        $0.layer.cornerRadius = 11
+        $0.backgroundColor = UIColor.mainColor
+        let text = "로그인"
+        let attributedText = NSMutableAttributedString(string: text)
+        attributedText.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: text.count))
+        attributedText.addAttribute(.font, value: UIFont.pretendard(size: 18, family: .bold), range: NSRange(location: 0, length: text.count))
+        $0.setAttributedTitle(attributedText, for: .normal)
     }
+    
+    let signUpBT = UIButton(type: .custom).then {
+        $0.layer.cornerRadius = 11
+        $0.layer.borderColor = UIColor.rgb(red: 97, green: 97, blue: 97).cgColor
+        $0.layer.borderWidth = 0.5
+        $0.backgroundColor = UIColor.clear
+        let text = "회원가입"
+        let attributedText = NSMutableAttributedString(string: text)
+        attributedText.addAttribute(.foregroundColor, value: UIColor.rgb(red: 97, green: 97, blue: 97), range: NSRange(location: 0, length: text.count))
+        attributedText.addAttribute(.font, value: UIFont.pretendard(size: 18, family: .bold), range: NSRange(location: 0, length: text.count))
+        $0.setAttributedTitle(attributedText, for: .normal)
+    }
+    
+    
     
     lazy var apiFieldStack = UIStackView(arrangedSubviews: [kakaoLoginBt, naverLoginBt, googleLoginBt, appleLoginBt]).then {
         $0.axis = .horizontal
@@ -78,8 +93,12 @@ class MainLoginViewController: UIViewController {
     
 }
 
-extension MainLoginViewController: DefaultViewDelegate {
+extension MainLoginViewController {
     
+    func bind() {
+        bindInput()
+        bindOutput()
+    }
     
     func bindInput() {
         
@@ -100,6 +119,14 @@ extension MainLoginViewController: DefaultViewDelegate {
                 self.appleLogin()
             }).disposed(by: disposeBag)
         
+        signUpBT.rx.tap
+            .subscribe(onNext: {
+                
+                let vc = AgreeNTermViewController()
+                vc.modalPresentationStyle = .formSheet
+                self.present(vc, animated: true)
+                
+            }).disposed(by: disposeBag)
         
         
         
@@ -159,16 +186,9 @@ extension MainLoginViewController: DefaultViewDelegate {
             $0.height.equalTo(56)
         }
         
-        contentView.addSubview(socialLabel)
-        socialLabel.snp.makeConstraints {
-            $0.top.equalTo(signUpBT.snp.bottom).offset(37)
-            $0.centerX.equalToSuperview()
-            $0.height.equalTo(23)
-        }
-        
         contentView.addSubview(apiFieldStack)
         apiFieldStack.snp.makeConstraints {
-            $0.top.equalTo(socialLabel.snp.bottom).offset(11)
+            $0.top.equalTo(signUpBT.snp.bottom).offset(81)
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-10)
         }

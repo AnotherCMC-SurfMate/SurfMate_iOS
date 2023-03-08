@@ -21,6 +21,8 @@
 		BF2107A329373F7C008E99D2 /* SurfMate_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */; };
 		BF2107A529373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */; };
 		BF23BD4529A741F00062391B /* DefaultLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF23BD4429A741F00062391B /* DefaultLoginViewController.swift */; };
+		BF42D9E329B8654C000491DE /* AgreeNTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */; };
+		BF42D9E629B87316000491DE /* AgreeNTermViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */; };
 		BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */; };
 		BF5B39AA296E4FEC009ED5DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */; };
 		BF87264A29B1BE2600CAED4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF87264929B1BE2600CAED4D /* LaunchScreen.storyboard */; };
@@ -87,6 +89,8 @@
 		BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITests.swift; sourceTree = "<group>"; };
 		BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF23BD4429A741F00062391B /* DefaultLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginViewController.swift; sourceTree = "<group>"; };
+		BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeNTermViewController.swift; sourceTree = "<group>"; };
+		BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeNTermViewModel.swift; sourceTree = "<group>"; };
 		BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
 		BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF87264929B1BE2600CAED4D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -239,6 +243,14 @@
 			path = SurfMate_iOSUITests;
 			sourceTree = "<group>";
 		};
+		BF42D9E429B87300000491DE /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		BFD6638C299B783500A7BC5D /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +293,7 @@
 		BFE5ECD7298A15A5007DF9CF /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -307,6 +320,7 @@
 		BFE5ECDA298A19D1007DF9CF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BF42D9E429B87300000491DE /* SignUp */,
 				BFE5ECDB298A1A15007DF9CF /* SignIn */,
 			);
 			path = ViewModel;
@@ -595,9 +609,11 @@
 				BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */,
 				BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */,
 				BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */,
+				BF42D9E629B87316000491DE /* AgreeNTermViewModel.swift in Sources */,
 				BF0E29F02988DBB500E95FC4 /* User.swift in Sources */,
 				BFE2A7E229750582006D8EC1 /* APIModel.swift in Sources */,
 				BFE5ECDD298A1A2D007DF9CF /* MainLogInViewModel.swift in Sources */,
+				BF42D9E329B8654C000491DE /* AgreeNTermViewController.swift in Sources */,
 				BF21078429373F7B008E99D2 /* SceneDelegate.swift in Sources */,
 				BFD663A3299B806500A7BC5D /* MainLoginViewController.swift in Sources */,
 				BF1C8B242978F292008E6FE5 /* FoundationExtension.swift in Sources */,
