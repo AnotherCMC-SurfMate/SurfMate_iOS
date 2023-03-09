@@ -21,6 +21,8 @@
 		BF2107A329373F7C008E99D2 /* SurfMate_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */; };
 		BF2107A529373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */; };
 		BF23BD4529A741F00062391B /* DefaultLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF23BD4429A741F00062391B /* DefaultLoginViewController.swift */; };
+		BF28F8C629B96D290044986F /* NameSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF28F8C529B96D290044986F /* NameSignUpViewController.swift */; };
+		BF28F8C829B9A4590044986F /* NameSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF28F8C729B9A4590044986F /* NameSignUpViewModel.swift */; };
 		BF42D9E329B8654C000491DE /* AgreeNTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */; };
 		BF42D9E629B87316000491DE /* AgreeNTermViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */; };
 		BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */; };
@@ -89,6 +91,8 @@
 		BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITests.swift; sourceTree = "<group>"; };
 		BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF23BD4429A741F00062391B /* DefaultLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginViewController.swift; sourceTree = "<group>"; };
+		BF28F8C529B96D290044986F /* NameSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSignUpViewController.swift; sourceTree = "<group>"; };
+		BF28F8C729B9A4590044986F /* NameSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSignUpViewModel.swift; sourceTree = "<group>"; };
 		BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeNTermViewController.swift; sourceTree = "<group>"; };
 		BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeNTermViewModel.swift; sourceTree = "<group>"; };
 		BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */,
+				BF28F8C729B9A4590044986F /* NameSignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */,
+				BF28F8C529B96D290044986F /* NameSignUpViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -606,6 +612,7 @@
 				BF0E29F22988DBF700E95FC4 /* SignUpRepository.swift in Sources */,
 				BF21078629373F7B008E99D2 /* LaunchViewController.swift in Sources */,
 				BFD6639F299B7F0100A7BC5D /* UIKitExtension.swift in Sources */,
+				BF28F8C629B96D290044986F /* NameSignUpViewController.swift in Sources */,
 				BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */,
 				BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */,
 				BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */,
@@ -615,6 +622,7 @@
 				BFE5ECDD298A1A2D007DF9CF /* MainLogInViewModel.swift in Sources */,
 				BF42D9E329B8654C000491DE /* AgreeNTermViewController.swift in Sources */,
 				BF21078429373F7B008E99D2 /* SceneDelegate.swift in Sources */,
+				BF28F8C829B9A4590044986F /* NameSignUpViewModel.swift in Sources */,
 				BFD663A3299B806500A7BC5D /* MainLoginViewController.swift in Sources */,
 				BF1C8B242978F292008E6FE5 /* FoundationExtension.swift in Sources */,
 				BFE5ECE0298A301A007DF9CF /* ModelEnum.swift in Sources */,

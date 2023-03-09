@@ -9,8 +9,9 @@ import Foundation
 
 struct User: Codable {
     
-    static var loginedUser:User? 
+    static var loginedUser:User?
     
+    var name:String = ""
     var uid:String = ""
     var phNum: String = ""
     var password:String = ""
