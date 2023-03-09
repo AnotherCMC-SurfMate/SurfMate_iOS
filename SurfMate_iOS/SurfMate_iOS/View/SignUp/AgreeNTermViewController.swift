@@ -15,6 +15,8 @@ class AgreeNTermViewController: UIViewController {
     private let vm = AgreeNTermViewModel()
     private let disposeBag = DisposeBag()
     
+    weak var delegate:MainLoginViewDelegate?
+    
     let scrollView = UIScrollView().then {
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
@@ -145,7 +147,6 @@ class AgreeNTermViewController: UIViewController {
     }
     
     let nextBT = SignUpButton(text: "동의완료")
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -336,9 +337,6 @@ extension AgreeNTermViewController {
             $0.bottom.equalToSuperview()
         }
         
-        
-        
-        
     }
     
     private func bind() {
@@ -371,6 +369,15 @@ extension AgreeNTermViewController {
         fithAgreeBT.rx.tap
             .bind(to: vm.input.fithAgreeRelay)
             .disposed(by: disposeBag)
+        
+        nextBT.rx.tap
+            .subscribe(onNext: {
+                
+                self.dismiss(animated: true) {
+                    self.delegate?.dismissAgreeNTermsViewController()
+                }
+                
+            }).disposed(by: disposeBag)
         
     }
     

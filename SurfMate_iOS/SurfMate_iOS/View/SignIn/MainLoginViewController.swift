@@ -13,7 +13,11 @@ import NaverThirdPartyLogin
 import AuthenticationServices
 
 
-class MainLoginViewController: UIViewController {
+protocol MainLoginViewDelegate: AnyObject {
+    func dismissAgreeNTermsViewController()
+}
+
+class MainLoginViewController: UIViewController, MainLoginViewDelegate {
     
     let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     let vm = MainLogInViewModel()
@@ -91,6 +95,20 @@ class MainLoginViewController: UIViewController {
         
     }
     
+    
+    
+    func dismissAgreeNTermsViewController() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let vm = NameSignUpViewModel(self.vm.user)
+            let vc = NameSignUpViewController(vm)
+            let nav = UINavigationController(rootViewController: vc)
+            nav.setNavigationBarHidden(true, animated: true)
+            nav.modalPresentationStyle = .fullScreen
+            nav.modalTransitionStyle = .crossDissolve
+            self.present(nav, animated: true)
+        }
+    }
+    
 }
 
 extension MainLoginViewController {
@@ -123,6 +141,7 @@ extension MainLoginViewController {
             .subscribe(onNext: {
                 
                 let vc = AgreeNTermViewController()
+                vc.delegate = self
                 vc.modalPresentationStyle = .formSheet
                 self.present(vc, animated: true)
                 

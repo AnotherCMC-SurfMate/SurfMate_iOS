@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 class AgreeNTermViewModel {
-    
+   
     let input = Input()
     let output = Output()
     private var agreeValues:[Bool] = [false, false, false, false, false]

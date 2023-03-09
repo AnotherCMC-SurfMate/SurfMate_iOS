@@ -33,11 +33,11 @@ class DefaultLoginViewController: UIViewController {
         $0.textColor = UIColor.black
     }
     
-    let phoneNumTF = DefaultTextField(text: "전화번호").then {
+    let phoneNumTF = DefaultTextField(text: "전화번호", placeHolder: "").then {
         $0.textField.keyboardType = .numberPad
     }
     
-    let pwTF = DefaultTextField(text: "비밀번호")
+    let pwTF = DefaultTextField(text: "비밀번호", placeHolder: "")
     
     let findPwBT = UIButton(type: .custom).then {
         let text = "비밀번호를 잊으셨나요?"
@@ -178,46 +178,6 @@ extension DefaultLoginViewController {
     
     func toggleTextField(_ textField: DefaultTextField) {
         
-        if textField.textField.text == "" {
-            
-            textField.toggle.toggle()
-            if textField.toggle {
-                textField.textFieldView.isHidden = false
-                textField.snp.updateConstraints {
-                    $0.top.equalTo(loginLB.snp.bottom).offset(34)
-                    $0.leading.equalToSuperview().offset(24)
-                    $0.trailing.equalToSuperview().offset(-24)
-                    $0.height.equalTo(60)
-                }
-                
-                textField.textFieldView.snp.updateConstraints {
-                    $0.top.equalTo(textField.titleLB.snp.bottom).offset(10)
-                    $0.leading.trailing.equalToSuperview()
-                    $0.height.equalTo(23)
-                }
-                
-            } else {
-                textField.textFieldView.isHidden = true
-                textField.snp.updateConstraints {
-                    $0.top.equalTo(loginLB.snp.bottom).offset(64)
-                    $0.leading.equalToSuperview().offset(24)
-                    $0.trailing.equalToSuperview().offset(-24)
-                    $0.height.equalTo(30)
-                }
-                
-                textField.textFieldView.snp.updateConstraints {
-                    $0.top.equalTo(textField.titleLB.snp.bottom).offset(10)
-                    $0.leading.trailing.equalToSuperview()
-                    $0.height.equalTo(0)
-                }
-                
-            }
-            
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
-                self.view.layoutIfNeeded()
-            }
-            
-        }
     }
     
 }
