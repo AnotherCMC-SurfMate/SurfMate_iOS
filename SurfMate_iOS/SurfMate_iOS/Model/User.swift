@@ -18,6 +18,7 @@ struct User: Codable {
     var provider:LoginType = .normal
     var fcmToken: String = ""
     var nickname:String = ""
+    var birth:String = ""
     
     
     func clear() {
