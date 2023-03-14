@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 class NameSignUpViewController: UIViewController {
-
+    
     let vm:NameSignUpViewModel
     
     private let disposeBag = DisposeBag()
@@ -27,6 +27,7 @@ class NameSignUpViewController: UIViewController {
     
     let titleLB = UILabel().then {
         $0.text = "서픽에 온 걸 환영해요🏄\n이름을 알려주세요!"
+        $0.numberOfLines = 2
         $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
         $0.font = UIFont(name: "Pretendard-Bold", size: 26)
     }
@@ -54,7 +55,7 @@ class NameSignUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-   
+    
 }
 
 extension NameSignUpViewController {
@@ -112,6 +113,16 @@ extension NameSignUpViewController {
             .map { self.nameTF.textField.text ?? ""}
             .bind(to: vm.input.textRelay)
             .disposed(by: disposeBag)
+        
+        backBT.rx.tap
+            .subscribe(onNext: {
+                self.dismiss(animated: true)
+            }).disposed(by: disposeBag)
+        
+        nextBT.rx.tap
+            .bind(to: vm.input.nextRelay)
+            .disposed(by: disposeBag)
+        
     }
     
     private func bindOutput() {
@@ -123,6 +134,15 @@ extension NameSignUpViewController {
                 } else {
                     nextBT.isEnabled = false
                 }
+            }).disposed(by: disposeBag)
+        
+        vm.output.nextValue.asDriver(onErrorJustReturn: User())
+            .drive(onNext: { value in
+                let vm = BirthSignUpViewModel(value)
+                let vc = BirthSignUpViewController(vm)
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc, animated: true)
             }).disposed(by: disposeBag)
         
     }

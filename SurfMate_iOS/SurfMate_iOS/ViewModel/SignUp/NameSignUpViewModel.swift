@@ -20,10 +20,12 @@ class NameSignUpViewModel {
     
     struct Input {
         let textRelay = PublishRelay<String>()
+        let nextRelay = PublishRelay<Void>()
     }
     
     struct Output {
         let buttonAbleRelay = BehaviorRelay<Bool>(value: false)
+        let nextValue = PublishRelay<User>()
     }
     
     
@@ -40,6 +42,11 @@ class NameSignUpViewModel {
                     output.buttonAbleRelay.accept(false)
                 }
                 
+            }).disposed(by: disposeBag)
+        
+        input.nextRelay
+            .subscribe(onNext: {
+                self.output.nextValue.accept(self.user)
             }).disposed(by: disposeBag)
         
     }
