@@ -36,6 +36,8 @@ extension SignUpAPI:TargetType {
         return .post
     }
     
+    
+    
     var task: Moya.Task {
         
         switch self {
@@ -46,7 +48,7 @@ extension SignUpAPI:TargetType {
         case .checkAcount(let num):
             let parameters:[String:Any] = ["phNum": num]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        
+            
         case .signup(let user):
             if user.provider == .normal {
                 let parameters:[String:Any] = ["phNum": user.phNum,
@@ -63,6 +65,8 @@ extension SignUpAPI:TargetType {
         }
        
     }
+    
+    
     
     var headers: [String : String]? {
         

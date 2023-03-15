@@ -19,6 +19,7 @@ struct User: Codable {
     var fcmToken: String = ""
     var nickname:String = ""
     var birth:String = ""
+    var gender:String = ""
     
     
     func clear() {
