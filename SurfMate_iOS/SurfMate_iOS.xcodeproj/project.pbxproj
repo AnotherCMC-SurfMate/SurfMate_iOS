@@ -28,6 +28,10 @@
 		BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */; };
 		BF5B39AA296E4FEC009ED5DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */; };
 		BF87264A29B1BE2600CAED4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF87264929B1BE2600CAED4D /* LaunchScreen.storyboard */; };
+		BFB5E39729C1617A0041A65F /* GenderSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */; };
+		BFB5E39929C161E60041A65F /* GenderSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */; };
+		BFB5E39B29C1749A0041A65F /* PhNumSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39A29C1749A0041A65F /* PhNumSignUpViewController.swift */; };
+		BFB5E39D29C178C20041A65F /* PhNumSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39C29C178C20041A65F /* PhNumSignUpViewModel.swift */; };
 		BFD66392299B7E6D00A7BC5D /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFD6638E299B7E6C00A7BC5D /* Pretendard-Regular.otf */; };
 		BFD66393299B7E6D00A7BC5D /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFD6638E299B7E6C00A7BC5D /* Pretendard-Regular.otf */; };
 		BFD66394299B7E6D00A7BC5D /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFD6638E299B7E6C00A7BC5D /* Pretendard-Regular.otf */; };
@@ -100,6 +104,10 @@
 		BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
 		BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF87264929B1BE2600CAED4D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSignUpViewController.swift; sourceTree = "<group>"; };
+		BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSignUpViewModel.swift; sourceTree = "<group>"; };
+		BFB5E39A29C1749A0041A65F /* PhNumSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhNumSignUpViewController.swift; sourceTree = "<group>"; };
+		BFB5E39C29C178C20041A65F /* PhNumSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhNumSignUpViewModel.swift; sourceTree = "<group>"; };
 		BFB6F000296E8DDE00C4EDC3 /* SurfMate_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SurfMate_iOS.entitlements; sourceTree = "<group>"; };
 		BFD6638E299B7E6C00A7BC5D /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		BFD6638F299B7E6C00A7BC5D /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -257,6 +265,8 @@
 				BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */,
 				BF28F8C729B9A4590044986F /* NameSignUpViewModel.swift */,
 				BFEDD41A29C02C2900A87ED4 /* BirthSignUpViewModel.swift */,
+				BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */,
+				BFB5E39C29C178C20041A65F /* PhNumSignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -306,6 +316,8 @@
 				BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */,
 				BF28F8C529B96D290044986F /* NameSignUpViewController.swift */,
 				BFEDD41829C0226100A87ED4 /* BirthSignUpViewController.swift */,
+				BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */,
+				BFB5E39A29C1749A0041A65F /* PhNumSignUpViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -623,12 +635,16 @@
 				BF28F8C629B96D290044986F /* NameSignUpViewController.swift in Sources */,
 				BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */,
 				BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */,
+				BFB5E39B29C1749A0041A65F /* PhNumSignUpViewController.swift in Sources */,
 				BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */,
 				BF42D9E629B87316000491DE /* AgreeNTermViewModel.swift in Sources */,
+				BFB5E39729C1617A0041A65F /* GenderSignUpViewController.swift in Sources */,
+				BFB5E39929C161E60041A65F /* GenderSignUpViewModel.swift in Sources */,
 				BF0E29F02988DBB500E95FC4 /* User.swift in Sources */,
 				BFE2A7E229750582006D8EC1 /* APIModel.swift in Sources */,
 				BFE5ECDD298A1A2D007DF9CF /* MainLogInViewModel.swift in Sources */,
 				BF42D9E329B8654C000491DE /* AgreeNTermViewController.swift in Sources */,
+				BFB5E39D29C178C20041A65F /* PhNumSignUpViewModel.swift in Sources */,
 				BF21078429373F7B008E99D2 /* SceneDelegate.swift in Sources */,
 				BF28F8C829B9A4590044986F /* NameSignUpViewModel.swift in Sources */,
 				BFD663A3299B806500A7BC5D /* MainLoginViewController.swift in Sources */,

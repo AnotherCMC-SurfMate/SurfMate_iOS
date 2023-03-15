@@ -208,6 +208,11 @@ extension BirthSignUpViewController {
     
     func bindInput() {
         
+        backBT.rx.tap
+            .subscribe(onNext: {
+                self.navigationController?.popViewController(animated: true)
+            }).disposed(by: disposeBag)
+        
         yearTextField.rx.controlEvent([.editingChanged])
             .map { self.yearTextField.text ?? ""}
             .bind(to: vm.input.yearRelay)
@@ -233,7 +238,13 @@ extension BirthSignUpViewController {
         
         vm.output.userValue.asDriver(onErrorJustReturn: User())
             .drive(onNext: { user in
-                print(user)
+                
+                let vm = GenderSignUpViewModel(user)
+                let vc = GenderSignUpViewController(vm)
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc, animated: true)
+                
             }).disposed(by: disposeBag)
         
         vm.output.buttonAble.asDriver(onErrorJustReturn: false)
