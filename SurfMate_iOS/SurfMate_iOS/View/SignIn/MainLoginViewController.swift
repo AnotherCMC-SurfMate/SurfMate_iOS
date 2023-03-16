@@ -142,7 +142,11 @@ extension MainLoginViewController {
                 
                 let vc = AgreeNTermViewController()
                 vc.delegate = self
-                vc.modalPresentationStyle = .formSheet
+                vc.sheetPresentationController?.detents = [
+                    .custom(resolver: { context in
+                        context.maximumDetentValue * 0.78
+                    })
+                ]
                 self.present(vc, animated: true)
                 
             }).disposed(by: disposeBag)

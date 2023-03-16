@@ -21,6 +21,9 @@
 		BF2107A329373F7C008E99D2 /* SurfMate_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */; };
 		BF2107A529373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */; };
 		BF23BD4529A741F00062391B /* DefaultLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF23BD4429A741F00062391B /* DefaultLoginViewController.swift */; };
+		BF2895F129C2CF4600177B2A /* AlertSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2895F029C2CF4600177B2A /* AlertSheet.swift */; };
+		BF2895F329C2EA8F00177B2A /* CertifyNumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2895F229C2EA8F00177B2A /* CertifyNumViewController.swift */; };
+		BF2895F529C2EB1100177B2A /* CertifyNumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2895F429C2EB1100177B2A /* CertifyNumViewModel.swift */; };
 		BF28F8C629B96D290044986F /* NameSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF28F8C529B96D290044986F /* NameSignUpViewController.swift */; };
 		BF28F8C829B9A4590044986F /* NameSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF28F8C729B9A4590044986F /* NameSignUpViewModel.swift */; };
 		BF42D9E329B8654C000491DE /* AgreeNTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */; };
@@ -97,6 +100,9 @@
 		BF2107A229373F7C008E99D2 /* SurfMate_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITests.swift; sourceTree = "<group>"; };
 		BF2107A429373F7C008E99D2 /* SurfMate_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfMate_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF23BD4429A741F00062391B /* DefaultLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginViewController.swift; sourceTree = "<group>"; };
+		BF2895F029C2CF4600177B2A /* AlertSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSheet.swift; sourceTree = "<group>"; };
+		BF2895F229C2EA8F00177B2A /* CertifyNumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertifyNumViewController.swift; sourceTree = "<group>"; };
+		BF2895F429C2EB1100177B2A /* CertifyNumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertifyNumViewModel.swift; sourceTree = "<group>"; };
 		BF28F8C529B96D290044986F /* NameSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSignUpViewController.swift; sourceTree = "<group>"; };
 		BF28F8C729B9A4590044986F /* NameSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSignUpViewModel.swift; sourceTree = "<group>"; };
 		BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeNTermViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +273,7 @@
 				BFEDD41A29C02C2900A87ED4 /* BirthSignUpViewModel.swift */,
 				BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */,
 				BFB5E39C29C178C20041A65F /* PhNumSignUpViewModel.swift */,
+				BF2895F429C2EB1100177B2A /* CertifyNumViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -318,6 +325,7 @@
 				BFEDD41829C0226100A87ED4 /* BirthSignUpViewController.swift */,
 				BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */,
 				BFB5E39A29C1749A0041A65F /* PhNumSignUpViewController.swift */,
+				BF2895F229C2EA8F00177B2A /* CertifyNumViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				BFE90CF829A457FB00960999 /* Custom.swift */,
+				BF2895F029C2CF4600177B2A /* AlertSheet.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -629,11 +638,13 @@
 				BFE2A7E4297505CD006D8EC1 /* HealthRepository.swift in Sources */,
 				BFEDD41B29C02C2900A87ED4 /* BirthSignUpViewModel.swift in Sources */,
 				BF0E29F22988DBF700E95FC4 /* SignUpRepository.swift in Sources */,
+				BF2895F129C2CF4600177B2A /* AlertSheet.swift in Sources */,
 				BF21078629373F7B008E99D2 /* LaunchViewController.swift in Sources */,
 				BFD6639F299B7F0100A7BC5D /* UIKitExtension.swift in Sources */,
 				BFEDD41929C0226100A87ED4 /* BirthSignUpViewController.swift in Sources */,
 				BF28F8C629B96D290044986F /* NameSignUpViewController.swift in Sources */,
 				BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */,
+				BF2895F529C2EB1100177B2A /* CertifyNumViewModel.swift in Sources */,
 				BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */,
 				BFB5E39B29C1749A0041A65F /* PhNumSignUpViewController.swift in Sources */,
 				BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */,
@@ -650,6 +661,7 @@
 				BFD663A3299B806500A7BC5D /* MainLoginViewController.swift in Sources */,
 				BF1C8B242978F292008E6FE5 /* FoundationExtension.swift in Sources */,
 				BFE5ECE0298A301A007DF9CF /* ModelEnum.swift in Sources */,
+				BF2895F329C2EA8F00177B2A /* CertifyNumViewController.swift in Sources */,
 				BFE90CF929A457FB00960999 /* Custom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
