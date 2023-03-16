@@ -70,7 +70,7 @@ class DefaultTextField: UIView {
     
     lazy var textField = UITextField().then {
         $0.inputAccessoryView = accessoryView
-        
+        $0.attributedPlaceholder = NSAttributedString(string: "12", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1)])
         $0.textColor = .black
         $0.font = UIFont.pretendard(size: 15, family: .medium)
         $0.textAlignment = .left
@@ -153,13 +153,13 @@ class SignUpButton: UIButton {
                 attributedText.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: text.count))
                 attributedText.addAttribute(.font, value: UIFont.pretendard(size: 18, family: .bold), range: NSRange(location: 0, length: text.count))
                 self.setAttributedTitle(attributedText, for: .normal)
-                self.backgroundColor = UIColor.rgb(red: 248, green: 164, blue: 41)
+                self.backgroundColor = UIColor.mainColor
             } else {
                 let attributedText = NSMutableAttributedString(string: text)
-                attributedText.addAttribute(.foregroundColor, value: UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1), range: NSRange(location: 0, length: text.count))
+                attributedText.addAttribute(.foregroundColor, value: UIColor(red: 0.565, green: 0.576, blue: 0.592, alpha: 1), range: NSRange(location: 0, length: text.count))
                 attributedText.addAttribute(.font, value: UIFont.pretendard(size: 18, family: .bold), range: NSRange(location: 0, length: text.count))
                 self.setAttributedTitle(attributedText, for: .normal)
-                self.backgroundColor = UIColor.rgb(red: 189, green: 191, blue: 193)
+                self.backgroundColor = UIColor(red: 0.941, green: 0.941, blue: 0.941, alpha: 1)
             }
         }
     }
@@ -180,9 +180,10 @@ class SignUpButton: UIButton {
         self.text = text
         
         let attributedText = NSMutableAttributedString(string: text)
-        attributedText.addAttribute(.foregroundColor, value: UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1), range: NSRange(location: 0, length: text.count))
+        attributedText.addAttribute(.foregroundColor, value: UIColor(red: 0.565, green: 0.576, blue: 0.592, alpha: 1), range: NSRange(location: 0, length: text.count))
         attributedText.addAttribute(.font, value: UIFont.pretendard(size: 18, family: .bold), range: NSRange(location: 0, length: text.count))
         self.setAttributedTitle(attributedText, for: .normal)
+        
     }
     
     func setUp() {

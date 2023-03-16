@@ -1,26 +1,26 @@
 //
-//  PhNumSignUpViewController.swift
+//  CertifyNumViewController.swift
 //  SurfMate_iOS
 //
-//  Created by Jun on 2023/03/15.
+//  Created by Jun on 2023/03/16.
 //
 
 import UIKit
 import RxCocoa
 import RxSwift
 
-class PhNumSignUpViewController: UIViewController {
+class CertifyNumViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
     
-    let vm:PhNumSignUpViewModel
+    let vm:CertifyNumViewModel
     
     let backBT = UIButton(type: .custom).then {
         $0.setImage(UIImage(named: "back_bt"), for: .normal)
     }
     
     let pageLB = UILabel().then {
-        $0.text = "4/7"
+        $0.text = "5/7"
         $0.textColor = UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1)
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
@@ -33,19 +33,25 @@ class PhNumSignUpViewController: UIViewController {
         
     }
     
-    let phNumTF = DefaultTextField(text: "전화번호", placeHolder: "휴대폰 번호 11자리").then {
+    let certifyNumTF = DefaultTextField(text: "인증번호", placeHolder: "000000").then {
         $0.textField.keyboardType = .numberPad
+    }
+    
+    let getCertifyBT = UIButton(type: .custom).then {
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1).cgColor
+        $0.layer.cornerRadius = 12
+        
+        let text = "인증번호 재요청"
+        let attributedText = NSMutableAttributedString(string: text)
+        attributedText.addAttribute(.foregroundColor, value:  UIColor(red: 0.565, green: 0.576, blue: 0.592, alpha: 1), range: NSRange(location: 0, length: text.count))
+        attributedText.addAttribute(.font, value: UIFont(name: "Pretendard-SemiBold", size: 15)!, range: NSRange(location: 0, length: text.count))
+        $0.setAttributedTitle(attributedText, for: .normal)
     }
     
     let nextBT = SignUpButton(text: "다음")
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUI()
-        bind()
-    }
-    
-    init(_ vm: PhNumSignUpViewModel) {
+    init(_ vm: CertifyNumViewModel) {
         self.vm = vm
         super.init(nibName: nil, bundle: nil)
     }
@@ -54,29 +60,16 @@ class PhNumSignUpViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUI()
+        bind()
     }
-
+    
 }
 
-extension PhNumSignUpViewController: AlertSheetDelegate {
-    
-    func dismissAction(_ action: AlertAction) {
-        switch action {
-        case .normal:
-            break
-        case .next:
-            let vm = CertifyNumViewModel(vm.user)
-            let vc = CertifyNumViewController(vm)
-            vc.modalTransitionStyle = .coverVertical
-            vc.modalPresentationStyle = .fullScreen
-            self.navigationController?.pushViewController(vc, animated: true)
-        case .goToLogin:
-            self.dismiss(animated: true)
-        }
-    }
-    
+extension CertifyNumViewController {
     
     func setUI() {
         navigationController?.isToolbarHidden = true
@@ -103,12 +96,20 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
             $0.height.equalTo(68)
         }
         
-        safeArea.addSubview(phNumTF)
-        phNumTF.snp.makeConstraints {
+        safeArea.addSubview(certifyNumTF)
+        certifyNumTF.snp.makeConstraints {
             $0.top.equalTo(titleLB.snp.bottom).offset(32)
             $0.leading.equalToSuperview().offset(24)
             $0.trailing.equalToSuperview().offset(-24)
             $0.height.equalTo(74)
+        }
+        
+        safeArea.addSubview(getCertifyBT)
+        getCertifyBT.snp.makeConstraints {
+            $0.top.equalTo(certifyNumTF.snp.bottom).offset(27)
+            $0.leading.equalToSuperview().offset(24)
+            $0.trailing.equalToSuperview().offset(-24)
+            $0.height.equalTo(56)
         }
         
         safeArea.addSubview(nextBT)
@@ -118,6 +119,7 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
             $0.trailing.equalToSuperview().offset(-25)
             $0.height.equalTo(56)
         }
+        
     }
     
     func bind() {
@@ -132,47 +134,36 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
                 self.navigationController?.popViewController(animated: true)
             }).disposed(by: disposeBag)
         
-        phNumTF.textField.rx.controlEvent([.editingChanged])
-            .map { self.phNumTF.textField.text ?? "" }
-            .bind(to: vm.input.phNumRelay)
+        certifyNumTF.textField.rx.controlEvent([.editingChanged])
+            .map { self.certifyNumTF.textField.text ?? "" }
+            .bind(to: vm.input.tfRelay)
+            .disposed(by: disposeBag)
+        
+        getCertifyBT.rx.tap
+            .bind(to: vm.input.getCertifyRelay)
             .disposed(by: disposeBag)
         
         nextBT.rx.tap
-            .map { self.phNumTF.textField.text ?? "" }
-            .bind(to: vm.input.nextRelay)
+            .map { self.certifyNumTF.textField.text ?? "" }
+            .bind(to: vm.input.certifyNumRelay)
             .disposed(by: disposeBag)
+        
         
     }
     
     func bindOutput() {
         
-        vm.output.buttonAble.asDriver(onErrorJustReturn: false)
+        vm.output.ableValue.asDriver(onErrorJustReturn: false)
             .drive(onNext: { value in
                 self.nextBT.isEnabled = value
             }).disposed(by: disposeBag)
         
-        vm.output.errorValue
-            .subscribe(onNext: { value in
-                
-                let vc = AlertSheetController(header: "🥲", contents: value.message, alertAction: .normal)
-                vc.delegate = self
-                vc.sheetPresentationController?.detents = [
-                    .custom(resolver: { context in
-                        290
-                    })
-                ]
-                self.present(vc, animated: true)
-                
-            }).disposed(by: disposeBag)
-        
-        vm.output.successValue
-            .subscribe(onNext: { value in
-                
-                if let value {
+        vm.output.confirmValue.asDriver(onErrorJustReturn: false)
+            .drive(onNext: { value in
+                if value {
                     
                 } else {
-                    let vc = AlertSheetController(header: "📩", contents: "인증번호가 발송되었습니다. 3분 안에\n인증번호를 입력해주세요.", alertAction: .next)
-                    vc.delegate = self
+                    let vc = AlertSheetController(header: "🥲", contents: "인증번호가 틀렸습니다.\n확인후 다시 입력해주세요.", alertAction: .next)
                     vc.sheetPresentationController?.detents = [
                         .custom(resolver: { context in
                             290
@@ -180,10 +171,20 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
                     ]
                     self.present(vc, animated: true)
                 }
-                
+            }).disposed(by: disposeBag)
+        
+        vm.output.resetValue
+            .skip(1)
+            .subscribe(onNext: {
+                let vc = AlertSheetController(header: "📩", contents: "인증번호가 발송되었습니다. 3분 안에\n인증번호를 입력해주세요.", alertAction: .next)
+                vc.sheetPresentationController?.detents = [
+                    .custom(resolver: { context in
+                        290
+                    })
+                ]
+                self.present(vc, animated: true)
             }).disposed(by: disposeBag)
         
     }
-    
     
 }

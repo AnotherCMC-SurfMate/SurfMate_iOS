@@ -37,7 +37,7 @@ class AgreeNTermViewController: UIViewController {
     }
     
     let allAgreeBT = UIButton(type: .custom).then {
-        $0.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        $0.setImage(UIImage(named: "checkmark"), for: .normal)
     }
     
     let allAgreeLB = UILabel().then {
@@ -57,7 +57,7 @@ class AgreeNTermViewController: UIViewController {
     }
     
     let firstAgreeBT = UIButton(type: .custom).then {
-        $0.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        $0.setImage(UIImage(named: "checkmark"), for: .normal)
     }
     
     let firstAgreeLB = UILabel().then {
@@ -75,7 +75,7 @@ class AgreeNTermViewController: UIViewController {
     }
     
     let secondAgreeBT = UIButton(type: .custom).then {
-        $0.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        $0.setImage(UIImage(named: "checkmark"), for: .normal)
     }
     
     let secondAgreeLB = UILabel().then {
@@ -93,7 +93,7 @@ class AgreeNTermViewController: UIViewController {
     }
     
     let thirdAgreeBT = UIButton(type: .custom).then {
-        $0.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        $0.setImage(UIImage(named: "checkmark"), for: .normal)
     }
     
     let thirdAgreeLB = UILabel().then {
@@ -111,7 +111,7 @@ class AgreeNTermViewController: UIViewController {
     }
     
     let forthAgreeBT = UIButton(type: .custom).then {
-        $0.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        $0.setImage(UIImage(named: "checkmark"), for: .normal)
     }
     
     let forthAgreeLB = UILabel().then {
@@ -129,7 +129,7 @@ class AgreeNTermViewController: UIViewController {
     }
     
     let fithAgreeBT = UIButton(type: .custom).then {
-        $0.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        $0.setImage(UIImage(named: "checkmark"), for: .normal)
     }
     
     let fithAgreeLB = UILabel().then {
@@ -166,7 +166,8 @@ extension AgreeNTermViewController {
         
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalToSuperview().offset(0.78)
         }
         
         scrollView.addSubview(contentView)
@@ -387,45 +388,45 @@ extension AgreeNTermViewController {
             .drive(onNext: { [unowned self] value in
                 
                 if value[0] {
-                    firstAgreeBT.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+                    firstAgreeBT.setImage(UIImage(named: "checkmark_fill"), for: .normal)
                 } else {
-                    firstAgreeBT.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+                    firstAgreeBT.setImage(UIImage(named: "checkmark"), for: .normal)
                 }
                 
                 if value[1] {
-                    secondAgreeBT.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+                    secondAgreeBT.setImage(UIImage(named: "checkmark_fill"), for: .normal)
                 } else {
-                    secondAgreeBT.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+                    secondAgreeBT.setImage(UIImage(named: "checkmark"), for: .normal)
                 }
                 
                 if value[2] {
-                    thirdAgreeBT.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+                    thirdAgreeBT.setImage(UIImage(named: "checkmark_fill"), for: .normal)
                 } else {
-                    thirdAgreeBT.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+                    thirdAgreeBT.setImage(UIImage(named: "checkmark"), for: .normal)
                 }
                 
                 if value[3] {
-                    forthAgreeBT.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+                    forthAgreeBT.setImage(UIImage(named: "checkmark_fill"), for: .normal)
                 } else {
-                    forthAgreeBT.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+                    forthAgreeBT.setImage(UIImage(named: "checkmark"), for: .normal)
                 }
                 
                 if value[4] {
-                    fithAgreeBT.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+                    fithAgreeBT.setImage(UIImage(named: "checkmark_fill"), for: .normal)
                 } else {
-                    fithAgreeBT.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+                    fithAgreeBT.setImage(UIImage(named: "checkmark"), for: .normal)
                 }
                 
                 if value == [true, true, true, true, true] {
-                    allAgreeBT.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+                    allAgreeBT.setImage(UIImage(named: "checkmark_fill"), for: .normal)
                     nextBT.isEnabled = true
                     
                 } else if value == [true, true, true, true, false] {
                     nextBT.isEnabled = true
-                    allAgreeBT.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+                    allAgreeBT.setImage(UIImage(named: "checkmark"), for: .normal)
                 } else {
                     nextBT.isEnabled = false
-                    allAgreeBT.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+                    allAgreeBT.setImage(UIImage(named: "checkmark"), for: .normal)
                 }
                 
                 

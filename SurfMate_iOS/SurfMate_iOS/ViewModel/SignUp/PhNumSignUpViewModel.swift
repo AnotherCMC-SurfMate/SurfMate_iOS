@@ -12,7 +12,7 @@ import Moya
 
 class PhNumSignUpViewModel {
     
-    let user:User
+    var user:User
     let input = Input()
     let output = Output()
     let signUpAPI = MoyaProvider<SignUpAPI>()
@@ -20,18 +20,26 @@ class PhNumSignUpViewModel {
     
     struct Input {
         let phNumRelay = PublishRelay<String>()
+        let nextRelay = PublishRelay<String>()
     }
     
     
     struct Output {
+        let buttonAble = PublishRelay<Bool>()
         let errorValue = PublishRelay<SurfMateError>()
-        let successValue = PublishRelay<String>()
+        let successValue = PublishRelay<String?>()
     }
     
     init(_ user: User) {
         self.user = user
         
         input.phNumRelay
+            .map { $0.count >= 11}
+            .subscribe(onNext: {[unowned self] value in
+                output.buttonAble.accept(value)
+            }).disposed(by: disposeBag)
+        
+        input.nextRelay
             .flatMap(checkAccount)
             .subscribe({[unowned self] event in
                 switch event {
@@ -41,7 +49,11 @@ class PhNumSignUpViewModel {
                     }
                     
                     if let value = result.value as? [String:Any] {
-                        print(value)
+                        if !(value["isDuplicated"] as! Bool) {
+                            output.successValue.accept(nil)
+                        } else {
+                            
+                        }
                     }
                     
                 default:
@@ -52,34 +64,42 @@ class PhNumSignUpViewModel {
     }
     
     func checkAccount(_ num: String) -> Observable<Result> {
-        
+        user.phNum = num
         return Observable.create { observer in
             
             var value = Result()
             
-            self.signUpAPI.request(.checkAcount(num: num)) { result in
-                switch result {
-                case .success(let response):
-                    
-                    let decoder = JSONDecoder()
-                    
-                    if let data = try? decoder.decode(DataResponse.self, from: response.data) {
+            if num.count > 11 {
+                
+                let error = SurfMateError(0, "올바른 전화번호를\n입력해주세요.")
+                value.error = error
+                observer.onNext(value)
+                
+            } else {
+                self.signUpAPI.request(.checkAcount(num: num)) { result in
+                    switch result {
+                    case .success(let response):
                         
-                        if data.message == "성공" {
+                        let decoder = JSONDecoder()
+                        
+                        if let data = try? decoder.decode(DataResponse.self, from: response.data) {
                             
-                            value.value = data.data
-                            
+                            if data.message == "성공" {
+                                
+                                value.value = data.data
+                                
+                            } else {
+                                let error = SurfMateError(data.code, data.message)
+                                value.error = error
+                            }
                         } else {
-                            let error = SurfMateError(data.code, data.message)
-                            value.error = error
+                            value.error = SurfMateError.SystemError
                         }
-                    } else {
-                        value.error = SurfMateError.SystemError
+                        observer.onNext(value)
+                    case .failure(_):
+                        value.error = SurfMateError.NetworkError
+                        observer.onNext(value)
                     }
-                    observer.onNext(value)
-                case .failure(_):
-                    value.error = SurfMateError.NetworkError
-                    observer.onNext(value)
                 }
             }
             

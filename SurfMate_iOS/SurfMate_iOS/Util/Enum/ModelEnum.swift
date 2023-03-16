@@ -16,3 +16,9 @@ enum LoginType: String, Codable {
     case normal = "NORMAL"
     
 }
+
+enum AlertAction {
+    case normal
+    case goToLogin
+    case next
+}
