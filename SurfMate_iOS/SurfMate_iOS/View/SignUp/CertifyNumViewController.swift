@@ -27,7 +27,7 @@ class CertifyNumViewController: UIViewController {
     }
     
     let titleLB = UILabel().then {
-        $0.text = "본인 확인을 위해\n전화번호를 입력해주세요!"
+        $0.text = "방금 받으신 📩\n인증번호를 입력해주세요!"
         $0.numberOfLines = 2
         $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
         $0.font = UIFont(name: "Pretendard-Bold", size: 26)
@@ -229,8 +229,8 @@ extension CertifyNumViewController {
                 return
             }
             
-            DispatchQueue.main.async {
-                self.timeLB.text = "\(remainSeconds/60):\(String(format: "%02d", remainSeconds%60))"
+            DispatchQueue.main.async { [weak self] in
+                self?.timeLB.text = "\(remainSeconds/60):\(String(format: "%02d", remainSeconds%60))"
             }
             
         })

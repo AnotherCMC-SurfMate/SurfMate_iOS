@@ -31,7 +31,7 @@ class PasswordSignUpViewController: UIViewController {
         
     }
     
-    let pwTF = DefaultTextField(text: "인증번호", placeHolder: "영문, 숫자 포함 8자리 이상")
+    let pwTF = DefaultTextField(text: "인증번호", placeHolder: "영문, 숫자 포함 8자리 이사")
     
     
     override func viewDidLoad() {
