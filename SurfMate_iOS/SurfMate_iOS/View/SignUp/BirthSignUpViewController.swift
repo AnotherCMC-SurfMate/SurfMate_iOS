@@ -51,6 +51,7 @@ class BirthSignUpViewController: UIViewController {
         $0.font = UIFont.pretendard(size: 15, family: .medium)
         $0.textAlignment = .left
         $0.delegate = self
+        $0.tintColor = UIColor.mainColor
         $0.keyboardType = .numberPad
     }
     
@@ -65,6 +66,7 @@ class BirthSignUpViewController: UIViewController {
         $0.textColor = .black
         $0.font = UIFont.pretendard(size: 15, family: .medium)
         $0.textAlignment = .left
+        $0.tintColor = UIColor.mainColor
         $0.delegate = self
         $0.keyboardType = .numberPad
     }
@@ -81,6 +83,7 @@ class BirthSignUpViewController: UIViewController {
         $0.font = UIFont.pretendard(size: 15, family: .medium)
         $0.textAlignment = .left
         $0.keyboardType = .numberPad
+        $0.tintColor = UIColor.mainColor
         $0.delegate = self
     }
     

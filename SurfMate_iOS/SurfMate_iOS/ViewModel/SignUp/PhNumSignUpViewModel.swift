@@ -49,10 +49,10 @@ class PhNumSignUpViewModel {
                     }
                     
                     if let value = result.value as? [String:Any] {
-                        if !(value["isDuplicated"] as! Bool) {
-                            output.successValue.accept(nil)
+                        if let provider = value["provider"] as? String {
+                            output.successValue.accept(provider)
                         } else {
-                            
+                            output.successValue.accept(nil)
                         }
                     }
                     

@@ -121,8 +121,10 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
     }
     
     func bind() {
+        
         bindInput()
         bindOutput()
+        
     }
     
     func bindInput() {
@@ -169,7 +171,14 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
             .subscribe(onNext: { value in
                 
                 if let value {
-                    
+                    let vc = AlertSheetController(header: "🧐", contents: "\(self.vm.user.name)님은\n\(value) 소셜 회원으로\n가입하신 기록이 있습니다.", alertAction: .goToLogin)
+                    vc.delegate = self
+                    vc.sheetPresentationController?.detents = [
+                        .custom(resolver: { context in
+                            330
+                        })
+                    ]
+                    self.present(vc, animated: true)
                 } else {
                     let vc = AlertSheetController(header: "📩", contents: "인증번호가 발송되었습니다. 3분 안에\n인증번호를 입력해주세요.", alertAction: .next)
                     vc.delegate = self

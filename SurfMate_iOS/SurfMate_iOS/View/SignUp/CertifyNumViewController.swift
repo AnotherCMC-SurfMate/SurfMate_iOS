@@ -14,6 +14,7 @@ class CertifyNumViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     let vm:CertifyNumViewModel
+    private var timer = Timer()
     
     let backBT = UIButton(type: .custom).then {
         $0.setImage(UIImage(named: "back_bt"), for: .normal)
@@ -37,11 +38,16 @@ class CertifyNumViewController: UIViewController {
         $0.textField.keyboardType = .numberPad
     }
     
+    let timeLB = UILabel().then {
+        $0.text = "3:00"
+        $0.textColor = UIColor(red: 0.929, green: 0.008, blue: 0.176, alpha: 1)
+        $0.font = UIFont(name: "Pretendard-Regular", size: 13)
+    }
+    
     let getCertifyBT = UIButton(type: .custom).then {
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1).cgColor
         $0.layer.cornerRadius = 12
-        
         let text = "인증번호 재요청"
         let attributedText = NSMutableAttributedString(string: text)
         attributedText.addAttribute(.foregroundColor, value:  UIColor(red: 0.565, green: 0.576, blue: 0.592, alpha: 1), range: NSRange(location: 0, length: text.count))
@@ -65,6 +71,10 @@ class CertifyNumViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setTimer()
     }
     
 }
@@ -102,6 +112,21 @@ extension CertifyNumViewController {
             $0.leading.equalToSuperview().offset(24)
             $0.trailing.equalToSuperview().offset(-24)
             $0.height.equalTo(74)
+        }
+        
+        certifyNumTF.addSubview(timeLB)
+        
+        certifyNumTF.textField.snp.remakeConstraints {
+            $0.top.equalTo(certifyNumTF.titleLB.snp.bottom).offset(6)
+            $0.leading.equalToSuperview().offset(18)
+            $0.height.equalTo(28)
+        }
+        
+        timeLB.snp.makeConstraints {
+            $0.top.equalTo(certifyNumTF.titleLB.snp.bottom).offset(10)
+            $0.leading.equalTo(certifyNumTF.textField.snp.trailing).offset(18)
+            $0.trailing.equalToSuperview().offset(-18)
+            $0.height.equalTo(20)
         }
         
         safeArea.addSubview(getCertifyBT)
@@ -184,6 +209,32 @@ extension CertifyNumViewController {
                 ]
                 self.present(vc, animated: true)
             }).disposed(by: disposeBag)
+        
+    }
+    
+    private func setTimer() {
+        
+        timer.invalidate()
+        
+        var seconds = 0
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            
+            seconds += 1
+            
+            let remainSeconds = 180 - seconds
+            
+            guard seconds <= 180 else {
+                self.timer.invalidate()
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.timeLB.text = "\(remainSeconds/60):\(String(format: "%02d", remainSeconds%60))"
+            }
+            
+        })
+        
         
     }
     

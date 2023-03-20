@@ -30,6 +30,8 @@
 		BF42D9E629B87316000491DE /* AgreeNTermViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */; };
 		BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */; };
 		BF5B39AA296E4FEC009ED5DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */; };
+		BF8230EE29C4287A003F2F0C /* PasswordSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8230ED29C4287A003F2F0C /* PasswordSignUpViewController.swift */; };
+		BF8230F029C42899003F2F0C /* PasswordSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8230EF29C42899003F2F0C /* PasswordSignUpViewModel.swift */; };
 		BF87264A29B1BE2600CAED4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF87264929B1BE2600CAED4D /* LaunchScreen.storyboard */; };
 		BFB5E39729C1617A0041A65F /* GenderSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */; };
 		BFB5E39929C161E60041A65F /* GenderSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */; };
@@ -109,6 +111,8 @@
 		BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeNTermViewModel.swift; sourceTree = "<group>"; };
 		BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
 		BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF8230ED29C4287A003F2F0C /* PasswordSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpViewController.swift; sourceTree = "<group>"; };
+		BF8230EF29C42899003F2F0C /* PasswordSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpViewModel.swift; sourceTree = "<group>"; };
 		BF87264929B1BE2600CAED4D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSignUpViewController.swift; sourceTree = "<group>"; };
 		BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSignUpViewModel.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */,
 				BFB5E39C29C178C20041A65F /* PhNumSignUpViewModel.swift */,
 				BF2895F429C2EB1100177B2A /* CertifyNumViewModel.swift */,
+				BF8230EF29C42899003F2F0C /* PasswordSignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */,
 				BFB5E39A29C1749A0041A65F /* PhNumSignUpViewController.swift */,
 				BF2895F229C2EA8F00177B2A /* CertifyNumViewController.swift */,
+				BF8230ED29C4287A003F2F0C /* PasswordSignUpViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -642,6 +648,7 @@
 				BF21078629373F7B008E99D2 /* LaunchViewController.swift in Sources */,
 				BFD6639F299B7F0100A7BC5D /* UIKitExtension.swift in Sources */,
 				BFEDD41929C0226100A87ED4 /* BirthSignUpViewController.swift in Sources */,
+				BF8230F029C42899003F2F0C /* PasswordSignUpViewModel.swift in Sources */,
 				BF28F8C629B96D290044986F /* NameSignUpViewController.swift in Sources */,
 				BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */,
 				BF2895F529C2EB1100177B2A /* CertifyNumViewModel.swift in Sources */,
@@ -651,6 +658,7 @@
 				BF42D9E629B87316000491DE /* AgreeNTermViewModel.swift in Sources */,
 				BFB5E39729C1617A0041A65F /* GenderSignUpViewController.swift in Sources */,
 				BFB5E39929C161E60041A65F /* GenderSignUpViewModel.swift in Sources */,
+				BF8230EE29C4287A003F2F0C /* PasswordSignUpViewController.swift in Sources */,
 				BF0E29F02988DBB500E95FC4 /* User.swift in Sources */,
 				BFE2A7E229750582006D8EC1 /* APIModel.swift in Sources */,
 				BFE5ECDD298A1A2D007DF9CF /* MainLogInViewModel.swift in Sources */,
