@@ -8,24 +8,11 @@
 import Foundation
 import RxSwift
 
-
-protocol DefaultViewDelegate {
-    
-    var disposeBag:DisposeBag { get }
-    func setUI()
-    func bind()
-    func bindInput()
-    func bindOutput()
-    
-}
-
-extension DefaultViewDelegate {
-    func bind() {
-        bindInput()
-        bindOutput()
-    }
-    
-    var disposeBag:DisposeBag {
-        return DisposeBag()
+extension String{
+    //숫자+문자 포함해서 8~20글자 사이의 text 체크하는 정규표현식
+    func validpassword() -> Bool {
+        let passwordreg = ("(?=.*[A-Za-z])(?=.*[0-9]).{8,20}")
+        let passwordtesting = NSPredicate(format: "SELF MATCHES %@", passwordreg)
+        return passwordtesting.evaluate(with: self)
     }
 }

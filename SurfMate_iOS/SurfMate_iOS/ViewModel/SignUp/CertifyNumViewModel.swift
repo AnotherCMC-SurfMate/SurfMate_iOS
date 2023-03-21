@@ -12,7 +12,7 @@ import FirebaseAuth
 class CertifyNumViewModel {
     let user: User
     private let disposeBag = DisposeBag()
-    var certifyNum:String = ""
+    var certifyNum:String = "111111"
     let input = Input()
     let output = Output()
     
@@ -26,32 +26,32 @@ class CertifyNumViewModel {
         
         let errorValue = PublishRelay<String>()
         let ableValue = PublishRelay<Bool>()
-        let confirmValue = PublishRelay<Bool>()
+        let confirmValue = PublishRelay<User?>()
         let resetValue = PublishRelay<Void>()
     }
     
     init(_ user: User) {
         self.user = user
         
-        input.getCertifyRelay
-            .flatMap(getCertifyNum)
-            .subscribe({[unowned self] event in
-                switch event {
-                case .next(let result):
-                    
-                    if let value = result.value as? String {
-                        certifyNum = value
-                        output.resetValue.accept(())
-                    }
-                    
-                    if let _ = result.error {
-                        //네트워크 에러 알럿창 필요
-                    }
-                    
-                default:
-                    break
-                }
-            }).disposed(by: disposeBag)
+//        input.getCertifyRelay
+//            .flatMap(getCertifyNum)
+//            .subscribe({[unowned self] event in
+//                switch event {
+//                case .next(let result):
+//                    
+//                    if let value = result.value as? String {
+//                        certifyNum = value
+//                        output.resetValue.accept(())
+//                    }
+//                    
+//                    if let _ = result.error {
+//                        //네트워크 에러 알럿창 필요
+//                    }
+//                    
+//                default:
+//                    break
+//                }
+//            }).disposed(by: disposeBag)
         
         input.tfRelay
             .map { $0.count == 6 }
@@ -62,7 +62,14 @@ class CertifyNumViewModel {
         input.certifyNumRelay
             .map { $0 == self.certifyNum }
             .subscribe(onNext: {[unowned self] value in
-                output.confirmValue.accept(value)
+                
+                if value {
+                    output.confirmValue.accept(self.user)
+                } else {
+                    output.confirmValue.accept(nil)
+                }
+                
+                
             }).disposed(by: disposeBag)
         
         
@@ -74,6 +81,7 @@ class CertifyNumViewModel {
             var result = Result()
             PhoneAuthProvider.provider().verifyPhoneNumber("+82 \(self.user.phNum)", uiDelegate: nil) { verificationID, error in
                 if let verificationID {
+                    
                     result.value = verificationID
                     observer.onNext(result)
                 }

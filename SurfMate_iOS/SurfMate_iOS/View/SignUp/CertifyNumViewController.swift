@@ -77,6 +77,10 @@ class CertifyNumViewController: UIViewController {
         setTimer()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
 
 extension CertifyNumViewController {
@@ -183,9 +187,16 @@ extension CertifyNumViewController {
                 self.nextBT.isEnabled = value
             }).disposed(by: disposeBag)
         
-        vm.output.confirmValue.asDriver(onErrorJustReturn: false)
+        vm.output.confirmValue.asDriver(onErrorJustReturn: nil)
             .drive(onNext: { value in
-                if value {
+                
+                if let value {
+                    
+                    let vm = PasswordSignUpViewModel(value)
+                    let vc = PasswordSignUpViewController(vm)
+                    vc.modalTransitionStyle = .coverVertical
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true)
                     
                 } else {
                     let vc = AlertSheetController(header: "🥲", contents: "인증번호가 틀렸습니다.\n확인후 다시 입력해주세요.", alertAction: .next)
@@ -196,6 +207,7 @@ extension CertifyNumViewController {
                     ]
                     self.present(vc, animated: true)
                 }
+                
             }).disposed(by: disposeBag)
         
         vm.output.resetValue
