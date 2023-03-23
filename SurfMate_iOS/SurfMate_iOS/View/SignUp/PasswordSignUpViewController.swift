@@ -175,7 +175,6 @@ extension PasswordSignUpViewController {
             .bind(to: vm.input.pwFormatRelay)
             .disposed(by: disposeBag)
         
-        
         pwVisibleBT.rx.tap
             .map { self.pwTF.textField.isSecureTextEntry }
             .bind(to: vm.input.pwVisibleRelay)
@@ -190,6 +189,11 @@ extension PasswordSignUpViewController {
             .map { self.pwConfirmTF.textField.text ?? "" }
             .bind(to: vm.input.pwConfirmValueRelay)
             .disposed(by: disposeBag)
+        
+        nextBT.rx.tap
+            .bind(to: vm.input.nextRelay)
+            .disposed(by: disposeBag)
+        
     }
     
     func bindOutput() {
@@ -247,6 +251,17 @@ extension PasswordSignUpViewController {
                 nextBT.isEnabled = value
             }).disposed(by: disposeBag)
         
+        vm.output.nextValue.asDriver(onErrorJustReturn: User())
+            .drive(onNext: { value in
+                
+                let vm = NicknameSignUpViewModel(value)
+                let vc = NicknameSignUpViewController(vm)
+                vc.modalTransitionStyle = .coverVertical
+                vc.modalPresentationStyle = .fullScreen
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }).disposed(by: disposeBag)
         
     }
     
