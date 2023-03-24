@@ -101,4 +101,38 @@ class NicknameSignUpViewModel {
         
     }
     
+    func signUp() -> Observable<Result> {
+        
+        return Observable.create { observer in
+            var responseOutput = Result()
+            self.signUpAPI.request(.signup(user: self.user)) { result in
+                switch result {
+                case .success(let response):
+                    let jsonDecoder = JSONDecoder()
+                    if let data = try? jsonDecoder.decode(DataResponse.self, from: response.data) {
+                        if data.message == "성공" {
+                            
+                            
+                            
+                        } else {
+                            let error = SurfMateError(data.code, data.message)
+                            responseOutput.error = error
+                            observer.onNext(responseOutput)
+                        }
+                    }
+                case .failure(_):
+                    let error = SurfMateError.SystemError
+                    responseOutput.error = error
+                    observer.onNext(responseOutput)
+                }
+            }
+            
+            return Disposables.create()
+        }
+        
+        
+    }
+    
+    
+    
 }

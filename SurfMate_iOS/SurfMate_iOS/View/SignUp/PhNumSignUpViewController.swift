@@ -171,7 +171,7 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
             .subscribe(onNext: { value in
                 
                 if let value {
-                    let vc = AlertSheetController(header: "🧐", contents: "\(self.vm.user.name)님은\n\(value) 소셜 회원으로\n가입하신 기록이 있습니다.", alertAction: .goToLogin)
+                    let vc = AlertSheetController(header: "🧐", contents: "\(self.vm.user.username)님은\n\(value) 소셜 회원으로\n가입하신 기록이 있습니다.", alertAction: .goToLogin)
                     vc.delegate = self
                     vc.sheetPresentationController?.detents = [
                         .custom(resolver: { context in

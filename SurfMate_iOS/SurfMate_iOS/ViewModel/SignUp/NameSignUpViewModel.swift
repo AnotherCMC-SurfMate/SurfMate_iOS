@@ -36,7 +36,7 @@ class NameSignUpViewModel {
             .subscribe(onNext: {[unowned self] value in
                 
                 if value.count > 1 {
-                    self.user.name = value
+                    self.user.username = value
                     output.buttonAbleRelay.accept(true)
                 } else {
                     output.buttonAbleRelay.accept(false)

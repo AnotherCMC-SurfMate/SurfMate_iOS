@@ -136,7 +136,11 @@ extension NicknameSignUpViewController {
             }).disposed(by: disposeBag)
         
         nextBT.rx.tap
-            .bind(to: vm.input.buttonRelay)
+            .subscribe(onNext:{
+                self.present(self.ApiLoadingView, animated: true) {
+                    self.vm.input.buttonRelay.accept(())
+                }
+            })
             .disposed(by: disposeBag)
         
     }
