@@ -56,7 +56,7 @@ class BirthSignUpViewModel {
         
         input.nextRelay
             .subscribe(onNext: { [unowned self] in
-                self.user.birth = birth.joined()
+                self.user.birthDay = birth.joined()
                 output.userValue.accept(user)
             }).disposed(by: disposeBag)
         

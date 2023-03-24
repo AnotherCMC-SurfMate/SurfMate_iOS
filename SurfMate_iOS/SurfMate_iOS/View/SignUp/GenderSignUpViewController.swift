@@ -26,7 +26,7 @@ class GenderSignUpViewController: UIViewController {
     }
     
     lazy var titleLB = UILabel().then {
-        $0.text = "\(vm.user.name)님의 성별은\n어떻게 되시나요?"
+        $0.text = "\(vm.user.username)님의 성별은\n어떻게 되시나요?"
         $0.numberOfLines = 2
         $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
         $0.font = UIFont(name: "Pretendard-Bold", size: 26)

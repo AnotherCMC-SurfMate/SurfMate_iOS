@@ -11,14 +11,14 @@ struct User: Codable {
     
     static var loginedUser:User?
     
-    var name:String = ""
+    var username:String = ""
     var uid:String = ""
     var phNum: String = ""
     var password:String = ""
     var provider:LoginType = .normal
     var fcmToken: String = ""
     var nickname:String = ""
-    var birth:String = ""
+    var birthDay:String = ""
     var gender:String = ""
     
     

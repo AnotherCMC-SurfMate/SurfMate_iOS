@@ -54,12 +54,19 @@ extension SignUpAPI:TargetType {
                 let parameters:[String:Any] = ["phNum": user.phNum,
                                                "nickname":user.nickname,
                                                "password":user.password,
-                                               "fcmToken":user.fcmToken]
+                                               "fcmToken":user.fcmToken,
+                                               "gender":user.gender,
+                                               "birthDay":user.birthDay,
+                                               "username":user.username]
                 return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
             } else {
                 let parameters:[String:Any] = ["phNum": user.phNum,
                                                "nickname":user.nickname,
-                                               "uid":user.uid]
+                                               "password":"",
+                                               "fcmToken":user.fcmToken,
+                                               "gender":user.gender,
+                                               "birthDay":user.birthDay,
+                                               "username":user.username]
                 return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
             }
         }

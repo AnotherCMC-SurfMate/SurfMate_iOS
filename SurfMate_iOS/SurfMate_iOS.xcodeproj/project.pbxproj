@@ -26,6 +26,8 @@
 		BF2895F529C2EB1100177B2A /* CertifyNumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2895F429C2EB1100177B2A /* CertifyNumViewModel.swift */; };
 		BF28F8C629B96D290044986F /* NameSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF28F8C529B96D290044986F /* NameSignUpViewController.swift */; };
 		BF28F8C829B9A4590044986F /* NameSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF28F8C729B9A4590044986F /* NameSignUpViewModel.swift */; };
+		BF36C90729CBEDD0003D4811 /* NicknameSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36C90629CBEDD0003D4811 /* NicknameSignUpViewController.swift */; };
+		BF36C90929CBEE29003D4811 /* NicknameSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36C90829CBEE29003D4811 /* NicknameSignUpViewModel.swift */; };
 		BF42D9E329B8654C000491DE /* AgreeNTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */; };
 		BF42D9E629B87316000491DE /* AgreeNTermViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */; };
 		BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */; };
@@ -33,6 +35,7 @@
 		BF8230EE29C4287A003F2F0C /* PasswordSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8230ED29C4287A003F2F0C /* PasswordSignUpViewController.swift */; };
 		BF8230F029C42899003F2F0C /* PasswordSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8230EF29C42899003F2F0C /* PasswordSignUpViewModel.swift */; };
 		BF87264A29B1BE2600CAED4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF87264929B1BE2600CAED4D /* LaunchScreen.storyboard */; };
+		BF93248729CD616F003665DA /* CompleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93248629CD616F003665DA /* CompleteSignUpViewController.swift */; };
 		BFB5E39729C1617A0041A65F /* GenderSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */; };
 		BFB5E39929C161E60041A65F /* GenderSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */; };
 		BFB5E39B29C1749A0041A65F /* PhNumSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39A29C1749A0041A65F /* PhNumSignUpViewController.swift */; };
@@ -107,6 +110,8 @@
 		BF2895F429C2EB1100177B2A /* CertifyNumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertifyNumViewModel.swift; sourceTree = "<group>"; };
 		BF28F8C529B96D290044986F /* NameSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSignUpViewController.swift; sourceTree = "<group>"; };
 		BF28F8C729B9A4590044986F /* NameSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSignUpViewModel.swift; sourceTree = "<group>"; };
+		BF36C90629CBEDD0003D4811 /* NicknameSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameSignUpViewController.swift; sourceTree = "<group>"; };
+		BF36C90829CBEE29003D4811 /* NicknameSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameSignUpViewModel.swift; sourceTree = "<group>"; };
 		BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeNTermViewController.swift; sourceTree = "<group>"; };
 		BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeNTermViewModel.swift; sourceTree = "<group>"; };
 		BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 		BF8230ED29C4287A003F2F0C /* PasswordSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpViewController.swift; sourceTree = "<group>"; };
 		BF8230EF29C42899003F2F0C /* PasswordSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpViewModel.swift; sourceTree = "<group>"; };
 		BF87264929B1BE2600CAED4D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF93248629CD616F003665DA /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
 		BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSignUpViewController.swift; sourceTree = "<group>"; };
 		BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSignUpViewModel.swift; sourceTree = "<group>"; };
 		BFB5E39A29C1749A0041A65F /* PhNumSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhNumSignUpViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +285,7 @@
 				BFB5E39C29C178C20041A65F /* PhNumSignUpViewModel.swift */,
 				BF2895F429C2EB1100177B2A /* CertifyNumViewModel.swift */,
 				BF8230EF29C42899003F2F0C /* PasswordSignUpViewModel.swift */,
+				BF36C90829CBEE29003D4811 /* NicknameSignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -332,6 +339,8 @@
 				BFB5E39A29C1749A0041A65F /* PhNumSignUpViewController.swift */,
 				BF2895F229C2EA8F00177B2A /* CertifyNumViewController.swift */,
 				BF8230ED29C4287A003F2F0C /* PasswordSignUpViewController.swift */,
+				BF36C90629CBEDD0003D4811 /* NicknameSignUpViewController.swift */,
+				BF93248629CD616F003665DA /* CompleteSignUpViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -653,6 +662,8 @@
 				BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */,
 				BF2895F529C2EB1100177B2A /* CertifyNumViewModel.swift in Sources */,
 				BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */,
+				BF93248729CD616F003665DA /* CompleteSignUpViewController.swift in Sources */,
+				BF36C90929CBEE29003D4811 /* NicknameSignUpViewModel.swift in Sources */,
 				BFB5E39B29C1749A0041A65F /* PhNumSignUpViewController.swift in Sources */,
 				BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */,
 				BF42D9E629B87316000491DE /* AgreeNTermViewModel.swift in Sources */,
@@ -664,6 +675,7 @@
 				BFE5ECDD298A1A2D007DF9CF /* MainLogInViewModel.swift in Sources */,
 				BF42D9E329B8654C000491DE /* AgreeNTermViewController.swift in Sources */,
 				BFB5E39D29C178C20041A65F /* PhNumSignUpViewModel.swift in Sources */,
+				BF36C90729CBEDD0003D4811 /* NicknameSignUpViewController.swift in Sources */,
 				BF21078429373F7B008E99D2 /* SceneDelegate.swift in Sources */,
 				BF28F8C829B9A4590044986F /* NameSignUpViewModel.swift in Sources */,
 				BFD663A3299B806500A7BC5D /* MainLoginViewController.swift in Sources */,
