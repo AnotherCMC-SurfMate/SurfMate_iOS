@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxKeyboard
 
 class NicknameSignUpViewController: UIViewController {
 
@@ -26,10 +27,10 @@ class NicknameSignUpViewController: UIViewController {
     }
     
     let titleLB = UILabel().then {
-        $0.text = "타보자GO에서 어떤 🧐\n닉네임으로 불러드릴까요?"
+        let text = "타보자GO에서 어떤 🧐\n닉네임으로 불러드릴까요?"
+        let attributedText = NSMutableAttributedString.pretendard(text, .Display2, UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1))
+        $0.attributedText = attributedText
         $0.numberOfLines = 2
-        $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 26)
     }
     
     let nicknameTF = DefaultTextField(text: "닉네임", placeHolder: "한글 2자 이상").then {
@@ -143,6 +144,17 @@ extension NicknameSignUpViewController {
             })
             .disposed(by: disposeBag)
         
+        RxKeyboard.instance.visibleHeight
+            .skip(1)
+            .drive(onNext: { [unowned self] keyboardVisibleHeight in
+                
+                nextBT.snp.updateConstraints {
+                    $0.bottom.equalToSuperview().offset(-keyboardVisibleHeight)
+                }
+                
+                view.layoutIfNeeded()
+                
+            }).disposed(by: disposeBag)
     }
     
     func bindOuput() {

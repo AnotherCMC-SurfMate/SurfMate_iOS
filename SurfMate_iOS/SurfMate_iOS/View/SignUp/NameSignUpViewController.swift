@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxGesture
+import RxKeyboard
 
 class NameSignUpViewController: UIViewController {
     
@@ -26,10 +28,10 @@ class NameSignUpViewController: UIViewController {
     }
     
     let titleLB = UILabel().then {
-        $0.text = "서픽에 온 걸 환영해요🏄\n이름을 알려주세요!"
+        let text = "서픽에 온 걸 환영해요🏄\n이름을 알려주세요!"
+        let attributedText = NSMutableAttributedString.pretendard(text, .Display2, UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1))
+        $0.attributedText = attributedText
         $0.numberOfLines = 2
-        $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 26)
     }
     
     let nameTF = DefaultTextField(text: "이름", placeHolder: "홍길동")
@@ -122,6 +124,19 @@ extension NameSignUpViewController {
         nextBT.rx.tap
             .bind(to: vm.input.nextRelay)
             .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+            .skip(1)
+            .drive(onNext: { [unowned self] keyboardVisibleHeight in
+                
+                nextBT.snp.updateConstraints {
+                    $0.bottom.equalToSuperview().offset(-keyboardVisibleHeight)
+                }
+                
+                view.layoutIfNeeded()
+                
+            }).disposed(by: disposeBag)
+        
         
     }
     

@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxKeyboard
 
 class PasswordSignUpViewController: UIViewController {
 
@@ -26,10 +27,10 @@ class PasswordSignUpViewController: UIViewController {
     }
     
     let titleLB = UILabel().then {
-        $0.text = "본인 확인을 위해\n전화번호를 입력해주세요!"
+        let text = "본인 확인을 위해\n전화번호를 입력해주세요!"
+        let attributedText = NSMutableAttributedString.pretendard(text, .Display2, UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1))
+        $0.attributedText = attributedText
         $0.numberOfLines = 2
-        $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 26)
     }
     
     let pwTF = DefaultTextField(text: "비밀번호", placeHolder: "영문, 숫자 포함 8자리 이상").then {
@@ -193,6 +194,18 @@ extension PasswordSignUpViewController {
         nextBT.rx.tap
             .bind(to: vm.input.nextRelay)
             .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+            .skip(1)
+            .drive(onNext: { [unowned self] keyboardVisibleHeight in
+                
+                nextBT.snp.updateConstraints {
+                    $0.bottom.equalToSuperview().offset(-keyboardVisibleHeight)
+                }
+                
+                view.layoutIfNeeded()
+                
+            }).disposed(by: disposeBag)
         
     }
     

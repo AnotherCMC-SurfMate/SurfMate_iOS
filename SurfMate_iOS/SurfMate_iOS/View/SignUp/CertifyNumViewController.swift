@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxKeyboard
 
 class CertifyNumViewController: UIViewController {
 
@@ -27,10 +28,11 @@ class CertifyNumViewController: UIViewController {
     }
     
     let titleLB = UILabel().then {
-        $0.text = "방금 받으신 📩\n인증번호를 입력해주세요!"
+        let text = "방금 받으신 📩\n인증번호를 입력해주세요!"
+        let attributedText = NSMutableAttributedString.pretendard(text, .Display2, UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1))
+        $0.attributedText = attributedText
         $0.numberOfLines = 2
-        $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 26)
+        
         
     }
     
@@ -177,6 +179,17 @@ extension CertifyNumViewController {
             .bind(to: vm.input.certifyNumRelay)
             .disposed(by: disposeBag)
         
+        RxKeyboard.instance.visibleHeight
+            .skip(1)
+            .drive(onNext: { [unowned self] keyboardVisibleHeight in
+                
+                nextBT.snp.updateConstraints {
+                    $0.bottom.equalToSuperview().offset(-keyboardVisibleHeight)
+                }
+                
+                view.layoutIfNeeded()
+                
+            }).disposed(by: disposeBag)
         
     }
     

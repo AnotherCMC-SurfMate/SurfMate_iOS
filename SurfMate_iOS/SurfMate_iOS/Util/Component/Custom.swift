@@ -59,17 +59,7 @@ class DefaultTextField: UIView {
         $0.font = UIFont.pretendard(size: 13, family: .bold)
     }
     
-    lazy var accessoryView: UIView = {
-        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: 56))
-        view.addSubview(button)
-        button.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        return view
-    }()
-    
     lazy var textField = UITextField().then {
-        $0.inputAccessoryView = accessoryView
         $0.attributedPlaceholder = NSAttributedString(string: "12", attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1)])
         $0.textColor = .black
         $0.font = UIFont.pretendard(size: 15, family: .medium)
@@ -100,8 +90,6 @@ class DefaultTextField: UIView {
     func setUI() {
         backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
         layer.cornerRadius = 12
-        
-        
         
         addSubview(titleLB)
         

@@ -8,16 +8,17 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxKeyboard
 
 class CompleteSignUpViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
     
     let titleLB = UILabel().then {
-        $0.text = "\(User.loginedUser?.nickname ?? "줄리")님\n타보자GO! 에\n오신 걸 환영합니다 🥳"
+        let text = "\(User.loginedUser?.nickname ?? "줄리")님\n타보자GO! 에\n오신 걸 환영합니다 🥳"
+        let attributedText = NSMutableAttributedString.pretendard(text, .Display2, UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1))
+        $0.attributedText = attributedText
         $0.numberOfLines = 3
-        $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 26)
     }
     
     let nextBT = SignUpButton(text: "확인").then {
