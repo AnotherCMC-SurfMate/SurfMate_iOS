@@ -8,7 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
-
+import RxKeyboard
 
 class BirthSignUpViewController: UIViewController {
 
@@ -27,9 +27,9 @@ class BirthSignUpViewController: UIViewController {
     }
     
     lazy var titleLB = UILabel().then {
-        $0.text = "\(vm.user.username)님의 \n생년월일도 알려주세요!"
-        $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 26)
+        let text = "\(vm.user.username)님의 \n생년월일도 알려주세요!"
+        let attributedText = NSMutableAttributedString.pretendard(text, .Display2, UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1))
+        $0.attributedText = attributedText
         $0.numberOfLines = 2
     }
     
@@ -234,6 +234,20 @@ extension BirthSignUpViewController {
         nextBT.rx.tap
             .bind(to: vm.input.nextRelay)
             .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+            .skip(1)
+            .drive(onNext: { [unowned self] keyboardVisibleHeight in
+                
+                let offset = keyboardVisibleHeight == 0 ? -41 : -keyboardVisibleHeight
+                
+                nextBT.snp.updateConstraints {
+                    $0.bottom.equalToSuperview().offset(offset)
+                }
+                
+                view.layoutIfNeeded()
+                
+            }).disposed(by: disposeBag)
         
     }
     

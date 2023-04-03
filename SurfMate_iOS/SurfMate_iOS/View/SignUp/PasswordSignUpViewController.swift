@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxKeyboard
 
 class PasswordSignUpViewController: UIViewController {
 
@@ -26,10 +27,10 @@ class PasswordSignUpViewController: UIViewController {
     }
     
     let titleLB = UILabel().then {
-        $0.text = "본인 확인을 위해\n전화번호를 입력해주세요!"
+        let text = "회원가입을 위한 🔒\n비밀번호를 입력해주세요!"
+        let attributedText = NSMutableAttributedString.pretendard(text, .Display2, UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1))
+        $0.attributedText = attributedText
         $0.numberOfLines = 2
-        $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 26)
     }
     
     let pwTF = DefaultTextField(text: "비밀번호", placeHolder: "영문, 숫자 포함 8자리 이상").then {
@@ -122,6 +123,20 @@ extension PasswordSignUpViewController {
             $0.height.equalTo(74)
         }
         
+        pwTF.addSubview(pwVisibleBT)
+        pwTF.textField.snp.remakeConstraints {
+            $0.top.equalTo(pwTF.titleLB.snp.bottom).offset(6)
+            $0.leading.equalToSuperview().offset(18)
+            $0.height.equalTo(28)
+        }
+        
+        pwVisibleBT.snp.makeConstraints {
+            $0.top.equalTo(pwTF.titleLB.snp.bottom).offset(10)
+            $0.leading.equalTo(pwTF.textField.snp.trailing).offset(18)
+            $0.trailing.equalToSuperview().offset(-18)
+            $0.height.equalTo(22)
+        }
+        
         safeArea.addSubview(pwAlertLB)
         pwAlertLB.snp.makeConstraints {
             $0.top.equalTo(pwTF.snp.bottom).offset(3)
@@ -137,12 +152,27 @@ extension PasswordSignUpViewController {
             $0.height.equalTo(74)
         }
         
+        pwConfirmTF.addSubview(pwConfirmVisibleBT)
+        pwConfirmTF.textField.snp.remakeConstraints {
+            $0.top.equalTo(pwConfirmTF.titleLB.snp.bottom).offset(6)
+            $0.leading.equalToSuperview().offset(18)
+            $0.height.equalTo(28)
+        }
+        
+        pwConfirmVisibleBT.snp.makeConstraints {
+            $0.top.equalTo(pwConfirmTF.titleLB.snp.bottom).offset(10)
+            $0.leading.greaterThanOrEqualTo(pwConfirmTF.textField.snp.trailing).offset(18)
+            $0.trailing.equalToSuperview().offset(-18)
+            $0.height.equalTo(22)
+        }
+        
         safeArea.addSubview(pwConfirmAlertLB)
         pwConfirmAlertLB.snp.makeConstraints {
             $0.top.equalTo(pwConfirmTF.snp.bottom).offset(3)
             $0.trailing.equalToSuperview().offset(-24)
             $0.height.equalTo(20)
         }
+        
         
         safeArea.addSubview(nextBT)
         nextBT.snp.makeConstraints {
@@ -193,6 +223,20 @@ extension PasswordSignUpViewController {
         nextBT.rx.tap
             .bind(to: vm.input.nextRelay)
             .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+            .skip(1)
+            .drive(onNext: { [unowned self] keyboardVisibleHeight in
+                
+                let offset = keyboardVisibleHeight == 0 ? -41 : -keyboardVisibleHeight
+                
+                nextBT.snp.updateConstraints {
+                    $0.bottom.equalToSuperview().offset(offset)
+                }
+                
+                view.layoutIfNeeded()
+                
+            }).disposed(by: disposeBag)
         
     }
     

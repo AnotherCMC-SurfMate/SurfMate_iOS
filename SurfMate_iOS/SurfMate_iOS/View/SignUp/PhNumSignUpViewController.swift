@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxKeyboard
 
 class PhNumSignUpViewController: UIViewController {
 
@@ -26,10 +27,10 @@ class PhNumSignUpViewController: UIViewController {
     }
     
     let titleLB = UILabel().then {
-        $0.text = "본인 확인을 위해\n전화번호를 입력해주세요!"
+        let text = "본인 확인을 위해\n전화번호를 입력해주세요!"
+        let attributedText = NSMutableAttributedString.pretendard(text, .Display2, UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1))
         $0.numberOfLines = 2
-        $0.textColor = UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 26)
+        $0.attributedText = attributedText
         
     }
     
@@ -143,6 +144,20 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
             .map { self.phNumTF.textField.text ?? "" }
             .bind(to: vm.input.nextRelay)
             .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+            .skip(1)
+            .drive(onNext: { [unowned self] keyboardVisibleHeight in
+                
+                let offset = keyboardVisibleHeight == 0 ? -41 : -keyboardVisibleHeight
+                
+                nextBT.snp.updateConstraints {
+                    $0.bottom.equalToSuperview().offset(offset)
+                }
+                
+                view.layoutIfNeeded()
+                
+            }).disposed(by: disposeBag)
         
     }
     

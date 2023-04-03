@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KakaoSDK.initSDK(appKey: "fd4f047eab7ab4e35759cf2d95f6e908")
         
         let instance = NaverThirdPartyLoginConnection.getSharedInstance()
-        
         instance?.isInAppOauthEnable = true
         instance?.isNaverAppOauthEnable = true
         instance?.serviceUrlScheme = "surfmatenaverlogin"
@@ -35,14 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
             
         }
-        
         application.registerForRemoteNotifications()
-        
         return true
     }
 
     // MARK: UISceneSession Lifecycle
-
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.

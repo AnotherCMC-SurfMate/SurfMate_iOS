@@ -20,6 +20,7 @@ pod 'Then'
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'RxGesture'
+pod 'RxKeyboard'
 #UI
 pod 'TextFieldEffects'
 
