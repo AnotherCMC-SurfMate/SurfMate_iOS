@@ -129,8 +129,10 @@ extension NameSignUpViewController {
             .skip(1)
             .drive(onNext: { [unowned self] keyboardVisibleHeight in
                 
+                let offset = keyboardVisibleHeight == 0 ? -41 : -keyboardVisibleHeight
+                
                 nextBT.snp.updateConstraints {
-                    $0.bottom.equalToSuperview().offset(-keyboardVisibleHeight)
+                    $0.bottom.equalToSuperview().offset(offset)
                 }
                 
                 view.layoutIfNeeded()

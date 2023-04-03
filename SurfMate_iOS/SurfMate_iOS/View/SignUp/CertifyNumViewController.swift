@@ -182,9 +182,9 @@ extension CertifyNumViewController {
         RxKeyboard.instance.visibleHeight
             .skip(1)
             .drive(onNext: { [unowned self] keyboardVisibleHeight in
-                
+                let offset = keyboardVisibleHeight == 0 ? -41 : -keyboardVisibleHeight
                 nextBT.snp.updateConstraints {
-                    $0.bottom.equalToSuperview().offset(-keyboardVisibleHeight)
+                    $0.bottom.equalToSuperview().offset(offset)
                 }
                 
                 view.layoutIfNeeded()
@@ -209,7 +209,7 @@ extension CertifyNumViewController {
                     let vc = PasswordSignUpViewController(vm)
                     vc.modalTransitionStyle = .coverVertical
                     vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: true)
+                    self.navigationController?.pushViewController(vc, animated: true)
                     
                 } else {
                     let vc = AlertSheetController(header: "🥲", contents: "인증번호가 틀렸습니다.\n확인후 다시 입력해주세요.", alertAction: .next)

@@ -59,6 +59,7 @@ extension SignUpAPI:TargetType {
                                                "birthDay":user.birthDay,
                                                "username":user.username]
                 return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+                
             } else {
                 let parameters:[String:Any] = ["phNum": user.phNum,
                                                "nickname":user.nickname,

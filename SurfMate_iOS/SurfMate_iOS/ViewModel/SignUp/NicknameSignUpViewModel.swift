@@ -27,7 +27,7 @@ class NicknameSignUpViewModel {
     
     struct Output {
         let buttonAble = PublishRelay<String?>()
-        let tapButton = PublishRelay<User>()
+        let tapButton = PublishRelay<String?>()
     }
     
     init(_ user: User) {
@@ -45,8 +45,15 @@ class NicknameSignUpViewModel {
             }).disposed(by: disposeBag)
         
         input.buttonRelay
-            .subscribe(onNext: {
-                self.output.tapButton.accept(self.user)
+            .flatMap(signUp)
+            .subscribe(onNext: { [unowned self] value in
+                
+                if let error = value.error {
+                    output.tapButton.accept(error.message)
+                } else {
+                    User.loginedUser = self.user
+                    output.tapButton.accept(nil)
+                }
             }).disposed(by: disposeBag)
         
     }
@@ -102,7 +109,7 @@ class NicknameSignUpViewModel {
     }
     
     func signUp() -> Observable<Result> {
-        
+        print(user)
         return Observable.create { observer in
             var responseOutput = Result()
             self.signUpAPI.request(.signup(user: self.user)) { result in
@@ -110,10 +117,10 @@ class NicknameSignUpViewModel {
                 case .success(let response):
                     let jsonDecoder = JSONDecoder()
                     if let data = try? jsonDecoder.decode(DataResponse.self, from: response.data) {
+                        
+                        print(data)
                         if data.message == "성공" {
-                            
-                            
-                            
+                            observer.onNext(responseOutput)
                         } else {
                             let error = SurfMateError(data.code, data.message)
                             responseOutput.error = error

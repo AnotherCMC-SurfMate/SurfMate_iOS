@@ -33,9 +33,7 @@ class NicknameSignUpViewController: UIViewController {
         $0.numberOfLines = 2
     }
     
-    let nicknameTF = DefaultTextField(text: "닉네임", placeHolder: "한글 2자 이상").then {
-        $0.textField.isSecureTextEntry = true
-    }
+    let nicknameTF = DefaultTextField(text: "닉네임", placeHolder: "한글 2자 이상")
     
     let nicknameAlertLB = UILabel().then {
         $0.textColor = UIColor(red: 0.929, green: 0.008, blue: 0.176, alpha: 1)
@@ -148,8 +146,10 @@ extension NicknameSignUpViewController {
             .skip(1)
             .drive(onNext: { [unowned self] keyboardVisibleHeight in
                 
+                let offset = keyboardVisibleHeight == 0 ? -41 : -keyboardVisibleHeight
+                
                 nextBT.snp.updateConstraints {
-                    $0.bottom.equalToSuperview().offset(-keyboardVisibleHeight)
+                    $0.bottom.equalToSuperview().offset(offset)
                 }
                 
                 view.layoutIfNeeded()
@@ -159,8 +159,28 @@ extension NicknameSignUpViewController {
     
     func bindOuput() {
         
-        vm.output.tapButton.asDriver(onErrorJustReturn: User())
-            .drive(onNext: { value in
+        vm.output.tapButton.asDriver(onErrorJustReturn: "")
+            .drive(onNext: {[unowned self] value in
+                
+                ApiLoadingView.dismiss(animated: true)
+                if let value = value {
+                    
+                    let vc = AlertSheetController(header: "🥲", contents: value, alertAction: .next)
+                    vc.sheetPresentationController?.detents = [
+                        .custom(resolver: { context in
+                            290
+                        })
+                    ]
+                    self.present(vc, animated: true)
+                    
+                } else {
+                    
+                    let vc = CompleteSignUpViewController()
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .fullScreen
+                    navigationController?.pushViewController(vc, animated: true)
+                    
+                }
                 
             }).disposed(by: disposeBag)
         
@@ -183,6 +203,8 @@ extension NicknameSignUpViewController {
                 }
                 
             }).disposed(by: disposeBag)
+        
+        
         
     }
     

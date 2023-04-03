@@ -122,18 +122,6 @@ extension GenderSignUpViewController {
         femaleBT.rx.tap
             .bind(to: vm.input.femaleRelay)
             .disposed(by: disposeBag)
-     
-        RxKeyboard.instance.visibleHeight
-            .skip(1)
-            .drive(onNext: { [unowned self] keyboardVisibleHeight in
-                
-                nextBT.snp.updateConstraints {
-                    $0.bottom.equalToSuperview().offset(-keyboardVisibleHeight)
-                }
-                
-                view.layoutIfNeeded()
-                
-            }).disposed(by: disposeBag)
         
     }
     
