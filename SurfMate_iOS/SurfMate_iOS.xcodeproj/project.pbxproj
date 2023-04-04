@@ -58,6 +58,7 @@
 		BFD663A3299B806500A7BC5D /* MainLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD663A2299B806500A7BC5D /* MainLoginViewController.swift */; };
 		BFD663A4299B806500A7BC5D /* MainLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD663A2299B806500A7BC5D /* MainLoginViewController.swift */; };
 		BFD663A5299B806500A7BC5D /* MainLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD663A2299B806500A7BC5D /* MainLoginViewController.swift */; };
+		BFDF67C229DBBABE00F829FB /* DefaultLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF67C129DBBABE00F829FB /* DefaultLoginViewModel.swift */; };
 		BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDFDAD629778E1500D0D5C2 /* BaseRepository.swift */; };
 		BFE2A7E229750582006D8EC1 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE2A7E129750581006D8EC1 /* APIModel.swift */; };
 		BFE2A7E4297505CD006D8EC1 /* HealthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE2A7E3297505CD006D8EC1 /* HealthRepository.swift */; };
@@ -131,6 +132,7 @@
 		BFD66391299B7E6C00A7BC5D /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		BFD6639E299B7F0100A7BC5D /* UIKitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtension.swift; sourceTree = "<group>"; };
 		BFD663A2299B806500A7BC5D /* MainLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginViewController.swift; sourceTree = "<group>"; };
+		BFDF67C129DBBABE00F829FB /* DefaultLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginViewModel.swift; sourceTree = "<group>"; };
 		BFDFDAD629778E1500D0D5C2 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		BFE2A7E129750581006D8EC1 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		BFE2A7E3297505CD006D8EC1 /* HealthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRepository.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				BFE5ECDC298A1A2D007DF9CF /* MainLogInViewModel.swift */,
+				BFDF67C129DBBABE00F829FB /* DefaultLoginViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				BF8230F029C42899003F2F0C /* PasswordSignUpViewModel.swift in Sources */,
 				BF28F8C629B96D290044986F /* NameSignUpViewController.swift in Sources */,
 				BF21078229373F7B008E99D2 /* AppDelegate.swift in Sources */,
+				BFDF67C229DBBABE00F829FB /* DefaultLoginViewModel.swift in Sources */,
 				BF2895F529C2EB1100177B2A /* CertifyNumViewModel.swift in Sources */,
 				BFDFDAD729778E1500D0D5C2 /* BaseRepository.swift in Sources */,
 				BF93248729CD616F003665DA /* CompleteSignUpViewController.swift in Sources */,

@@ -15,6 +15,7 @@ import AuthenticationServices
 
 protocol MainLoginViewDelegate: AnyObject {
     func dismissAgreeNTermsViewController()
+    func goToAgreeNTermsViewController()
 }
 
 class MainLoginViewController: UIViewController, MainLoginViewDelegate {
@@ -95,7 +96,18 @@ class MainLoginViewController: UIViewController, MainLoginViewDelegate {
         
     }
     
-    
+    func goToAgreeNTermsViewController() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let vc = AgreeNTermViewController()
+            vc.delegate = self
+            vc.sheetPresentationController?.detents = [
+                .custom(resolver: { context in
+                    context.maximumDetentValue * 0.78
+                })
+            ]
+            self.present(vc, animated: true)
+        }
+    }
     
     func dismissAgreeNTermsViewController() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -151,6 +163,16 @@ extension MainLoginViewController {
                 
             }).disposed(by: disposeBag)
         
+        loginBT.rx.tap
+            .subscribe(onNext: {
+                
+                let vc = DefaultLoginViewController()
+                vc.delegate = self
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+                
+            }).disposed(by: disposeBag)
         
         
     }

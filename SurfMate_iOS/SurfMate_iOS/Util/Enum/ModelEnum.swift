@@ -22,3 +22,4 @@ enum AlertAction {
     case goToLogin
     case next
 }
+
