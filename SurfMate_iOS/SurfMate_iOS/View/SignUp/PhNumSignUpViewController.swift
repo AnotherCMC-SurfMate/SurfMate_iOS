@@ -15,6 +15,8 @@ class PhNumSignUpViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     let vm:PhNumSignUpViewModel
+    let mode:
+    
     
     let backBT = UIButton(type: .custom).then {
         $0.setImage(UIImage(named: "back_bt"), for: .normal)
