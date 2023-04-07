@@ -246,14 +246,29 @@ extension DefaultLoginViewController {
             .skip(1)
             .drive(onNext: { [unowned self] keyboardVisibleHeight in
                 
-                let offset = keyboardVisibleHeight == 0 ? -10 : -keyboardVisibleHeight
-                
-                loginBT.snp.updateConstraints {
-                    $0.bottom.equalToSuperview().offset(offset)
+                if keyboardVisibleHeight == 0 {
+                    loginBT.snp.updateConstraints {
+                        $0.top.equalTo(signUpBT.snp.bottom).offset(29)
+                        $0.bottom.equalToSuperview().offset(-10)
+                    }
+                } else {
+                    loginBT.snp.updateConstraints {
+                        $0.top.equalTo(findPwBT.snp.bottom).offset(29)
+                        $0.bottom.equalToSuperview().offset(-10 - keyboardVisibleHeight)
+                    }
                 }
                 
                 view.layoutIfNeeded()
                 
+            }).disposed(by: disposeBag)
+        
+        findPwBT.rx.tap
+            .subscribe(onNext: {
+                let vm = PhNumSignUpViewModel(User())
+                let vc = PhNumSignUpViewController(vm, .Change)
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
             }).disposed(by: disposeBag)
         
     }

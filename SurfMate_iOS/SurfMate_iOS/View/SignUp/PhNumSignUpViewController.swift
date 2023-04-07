@@ -15,7 +15,7 @@ class PhNumSignUpViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     let vm:PhNumSignUpViewModel
-    let mode:
+    let mode:PWPageMode
     
     
     let backBT = UIButton(type: .custom).then {
@@ -28,12 +28,11 @@ class PhNumSignUpViewController: UIViewController {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
     
-    let titleLB = UILabel().then {
-        let text = "본인 확인을 위해\n전화번호를 입력해주세요!"
+    lazy var titleLB = UILabel().then {
+        let text =  mode == .SignUp ? "본인 확인을 위해\n전화번호를 입력해주세요!" : "가입하신 전화번호를\n입력해주세요."
         let attributedText = NSMutableAttributedString.pretendard(text, .Display2, UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1))
         $0.numberOfLines = 2
         $0.attributedText = attributedText
-        
     }
     
     let phNumTF = DefaultTextField(text: "전화번호", placeHolder: "휴대폰 번호 11자리").then {
@@ -48,8 +47,9 @@ class PhNumSignUpViewController: UIViewController {
         bind()
     }
     
-    init(_ vm: PhNumSignUpViewModel) {
+    init(_ vm: PhNumSignUpViewModel,_ mode: PWPageMode) {
         self.vm = vm
+        self.mode = mode
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -71,7 +71,7 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
             break
         case .next:
             let vm = CertifyNumViewModel(vm.user)
-            let vc = CertifyNumViewController(vm)
+            let vc = CertifyNumViewController(vm, self.mode)
             vc.modalTransitionStyle = .coverVertical
             vc.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(vc, animated: true)
@@ -134,7 +134,12 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
         
         backBT.rx.tap
             .subscribe(onNext: {
-                self.navigationController?.popViewController(animated: true)
+                switch self.mode {
+                case .SignUp:
+                    self.navigationController?.popViewController(animated: true)
+                case .Change:
+                    self.dismiss(animated: true)
+                }
             }).disposed(by: disposeBag)
         
         phNumTF.textField.rx.controlEvent([.editingChanged])

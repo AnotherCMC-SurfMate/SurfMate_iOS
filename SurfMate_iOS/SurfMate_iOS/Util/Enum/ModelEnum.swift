@@ -23,3 +23,7 @@ enum AlertAction {
     case next
 }
 
+enum PWPageMode {
+    case SignUp
+    case Change
+}

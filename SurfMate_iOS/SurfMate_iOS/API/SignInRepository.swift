@@ -13,7 +13,7 @@ enum SignInAPI {
     case login(user: User)
     case socialLogin(user: User, token: String)
     case checkAcount(num: String)
-    case passwordChange(phNum: String, newPassword: String)
+    
 }
 
 extension SignInAPI:TargetType {
@@ -29,8 +29,7 @@ extension SignInAPI:TargetType {
             return "/auth/social"
         case .checkAcount(_):
             return "/auth/check/account"
-        case .passwordChange(_, _):
-            return "/auth/password/change"
+        
         }
     }
     
@@ -56,11 +55,7 @@ extension SignInAPI:TargetType {
         case .checkAcount(let num):
             let parameters:[String:Any] = ["phNum": num]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .passwordChange(let phNum, let newPassword):
-            let parameters:[String:Any] = ["phNum": phNum,
-                                           "newPassword": newPassword]
-            
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        
         }
        
     }

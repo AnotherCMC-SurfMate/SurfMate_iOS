@@ -15,6 +15,7 @@ class PasswordSignUpViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private let vm:PasswordSignUpViewModel
+    private let mode:PWPageMode
     
     let backBT = UIButton(type: .custom).then {
         $0.setImage(UIImage(named: "back_bt"), for: .normal)
@@ -66,8 +67,9 @@ class PasswordSignUpViewController: UIViewController {
     
     let nextBT = SignUpButton(text: "다음")
     
-    init(_ vm: PasswordSignUpViewModel) {
+    init(_ vm: PasswordSignUpViewModel, _ mode: PWPageMode) {
         self.vm = vm
+        self.mode = mode
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -87,7 +89,16 @@ class PasswordSignUpViewController: UIViewController {
     
 }
 
-extension PasswordSignUpViewController {
+extension PasswordSignUpViewController: AlertSheetDelegate {
+    
+    func dismissAction(_ action: AlertAction) {
+        switch action {
+        case .goToLogin:
+            self.dismiss(animated: true)
+        default:
+            break
+        }
+    }
     
     func setUI() {
         
@@ -221,6 +232,7 @@ extension PasswordSignUpViewController {
             .disposed(by: disposeBag)
         
         nextBT.rx.tap
+            .map { self.mode }
             .bind(to: vm.input.nextRelay)
             .disposed(by: disposeBag)
         
@@ -304,6 +316,32 @@ extension PasswordSignUpViewController {
                 vc.modalPresentationStyle = .fullScreen
                 
                 self.navigationController?.pushViewController(vc, animated: true)
+                
+            }).disposed(by: disposeBag)
+        
+        vm.output.changePW.asDriver(onErrorJustReturn: "")
+            .drive(onNext: { value in
+                
+                if let value {
+                    let vc = AlertSheetController(header: "🧐", contents: value, alertAction: .normal)
+                    vc.delegate = self
+                    vc.sheetPresentationController?.detents = [
+                        .custom(resolver: { context in
+                            290
+                        })
+                    ]
+                    self.present(vc, animated: true)
+                } else {
+                    let vc = AlertSheetController(header: "", contents: "새로운 비밀번호 설정이\n완료되었습니다.", alertAction: .goToLogin)
+                    vc.delegate = self
+                    vc.sheetPresentationController?.detents = [
+                        .custom(resolver: { context in
+                            256
+                        })
+                    ]
+                    self.present(vc, animated: true)
+                }
+                
                 
             }).disposed(by: disposeBag)
         
