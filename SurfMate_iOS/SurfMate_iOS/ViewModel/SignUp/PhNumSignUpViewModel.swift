@@ -18,6 +18,7 @@ class PhNumSignUpViewModel {
     let signUpAPI = MoyaProvider<SignUpAPI>()
     private let disposeBag = DisposeBag()
     
+    
     struct Input {
         let phNumRelay = PublishRelay<String>()
         let nextRelay = PublishRelay<String>()
@@ -29,6 +30,7 @@ class PhNumSignUpViewModel {
         let errorValue = PublishRelay<SurfMateError>()
         let successValue = PublishRelay<String?>()
     }
+    
     
     init(_ user: User) {
         self.user = user

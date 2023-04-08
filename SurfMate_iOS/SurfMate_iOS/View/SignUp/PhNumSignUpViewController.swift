@@ -15,23 +15,25 @@ class PhNumSignUpViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     let vm:PhNumSignUpViewModel
+    let mode:PWPageMode
+    
     
     let backBT = UIButton(type: .custom).then {
         $0.setImage(UIImage(named: "back_bt"), for: .normal)
     }
     
-    let pageLB = UILabel().then {
+    lazy var pageLB = UILabel().then {
         $0.text = "4/7"
         $0.textColor = UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1)
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+        $0.alpha = mode == .SignUp ? 1.0 : 0
     }
     
-    let titleLB = UILabel().then {
-        let text = "본인 확인을 위해\n전화번호를 입력해주세요!"
+    lazy var titleLB = UILabel().then {
+        let text =  mode == .SignUp ? "본인 확인을 위해\n전화번호를 입력해주세요!" : "가입하신 전화번호를\n입력해주세요."
         let attributedText = NSMutableAttributedString.pretendard(text, .Display2, UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1))
         $0.numberOfLines = 2
         $0.attributedText = attributedText
-        
     }
     
     let phNumTF = DefaultTextField(text: "전화번호", placeHolder: "휴대폰 번호 11자리").then {
@@ -46,8 +48,9 @@ class PhNumSignUpViewController: UIViewController {
         bind()
     }
     
-    init(_ vm: PhNumSignUpViewModel) {
+    init(_ vm: PhNumSignUpViewModel,_ mode: PWPageMode) {
         self.vm = vm
+        self.mode = mode
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -69,7 +72,7 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
             break
         case .next:
             let vm = CertifyNumViewModel(vm.user)
-            let vc = CertifyNumViewController(vm)
+            let vc = CertifyNumViewController(vm, self.mode)
             vc.modalTransitionStyle = .coverVertical
             vc.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(vc, animated: true)
@@ -132,7 +135,12 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
         
         backBT.rx.tap
             .subscribe(onNext: {
-                self.navigationController?.popViewController(animated: true)
+                switch self.mode {
+                case .SignUp:
+                    self.navigationController?.popViewController(animated: true)
+                case .Change:
+                    self.dismiss(animated: true)
+                }
             }).disposed(by: disposeBag)
         
         phNumTF.textField.rx.controlEvent([.editingChanged])
@@ -183,26 +191,66 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
             }).disposed(by: disposeBag)
         
         vm.output.successValue
-            .subscribe(onNext: { value in
+            .subscribe(onNext: {[unowned self] value in
                 
                 if let value {
-                    let vc = AlertSheetController(header: "🧐", contents: "\(self.vm.user.username)님은\n\(value) 소셜 회원으로\n가입하신 기록이 있습니다.", alertAction: .goToLogin)
-                    vc.delegate = self
-                    vc.sheetPresentationController?.detents = [
-                        .custom(resolver: { context in
-                            330
-                        })
-                    ]
-                    self.present(vc, animated: true)
+                    
+                    if value != "NORMAL" {
+                        let vc = AlertSheetController(header: "🧐", contents: "\(self.vm.user.username)님은\n\(value) 소셜 회원으로\n가입하신 기록이 있습니다.", alertAction: .goToLogin)
+                        vc.delegate = self
+                        vc.sheetPresentationController?.detents = [
+                            .custom(resolver: { context in
+                                330
+                            })
+                        ]
+                        self.present(vc, animated: true)
+                    } else {
+                        
+                        if mode == .SignUp {
+                            let vc = AlertSheetController(header: "🧐", contents: "이미 회원가입한 계정입니다.", alertAction: .goToLogin)
+                            vc.delegate = self
+                            vc.sheetPresentationController?.detents = [
+                                .custom(resolver: { context in
+                                    330
+                                })
+                            ]
+                            self.present(vc, animated: true)
+                        } else {
+                            let vc = AlertSheetController(header: "📩", contents: "인증번호가 발송되었습니다. 3분 안에\n인증번호를 입력해주세요.", alertAction: .next)
+                            vc.delegate = self
+                            vc.sheetPresentationController?.detents = [
+                                .custom(resolver: { context in
+                                    290
+                                })
+                            ]
+                            self.present(vc, animated: true)
+                        }
+                        
+                    }
+                    
                 } else {
-                    let vc = AlertSheetController(header: "📩", contents: "인증번호가 발송되었습니다. 3분 안에\n인증번호를 입력해주세요.", alertAction: .next)
-                    vc.delegate = self
-                    vc.sheetPresentationController?.detents = [
-                        .custom(resolver: { context in
-                            290
-                        })
-                    ]
-                    self.present(vc, animated: true)
+                    
+                    switch mode {
+                    case .SignUp:
+                        let vc = AlertSheetController(header: "📩", contents: "인증번호가 발송되었습니다. 3분 안에\n인증번호를 입력해주세요.", alertAction: .next)
+                        vc.delegate = self
+                        vc.sheetPresentationController?.detents = [
+                            .custom(resolver: { context in
+                                290
+                            })
+                        ]
+                        self.present(vc, animated: true)
+                    case .Change:
+                        let vc = AlertSheetController(header: "🧐", contents: "존재하지 않는 계정입니다.", alertAction: .normal)
+                        vc.delegate = self
+                        vc.sheetPresentationController?.detents = [
+                            .custom(resolver: { context in
+                                290
+                            })
+                        ]
+                        self.present(vc, animated: true)
+                    }
+                    
                 }
                 
             }).disposed(by: disposeBag)

@@ -8,11 +8,12 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Moya
 
 class PasswordSignUpViewModel {
     
     private let disposeBag = DisposeBag()
-    
+    private let signUpAPI = MoyaProvider<SignUpAPI>()
     var user:User
     
     let input = Input()
@@ -24,7 +25,7 @@ class PasswordSignUpViewModel {
         let pwFormatRelay = PublishRelay<Void>()
         let pwConfirmValueRelay = PublishRelay<String>()
         let pwConfirmVisibleRelay = PublishRelay<Bool>()
-        let nextRelay = PublishRelay<Void>()
+        let nextRelay = PublishRelay<PWPageMode>()
     }
     
     struct Output {
@@ -34,6 +35,7 @@ class PasswordSignUpViewModel {
         let pwConfirmVisible = BehaviorRelay<Bool>(value: true) //비밀번호 확인 표시
         let btAble = BehaviorRelay<Bool>(value: false)
         let nextValue = PublishRelay<User>()
+        let changePW = PublishRelay<String?>()
     }
     
     init(_ user: User) {
@@ -73,12 +75,54 @@ class PasswordSignUpViewModel {
             }).disposed(by: disposeBag)
         
         input.nextRelay
-            .map { self.user }
-            .subscribe(onNext: {[unowned self] value in
-                output.nextValue.accept(value)
+            .subscribe(onNext: {[unowned self] mode in
+                
+                switch mode {
+                case .SignUp:
+                    output.nextValue.accept(user)
+                case .Change:
+                    findPW().asDriver(onErrorJustReturn: Result())
+                        .drive(onNext: {[unowned self] value in
+                            if let error = value.error {
+                                output.changePW.accept(error.message)
+                            } else {
+                                output.changePW.accept(nil)
+                            }
+                        }).disposed(by: disposeBag)
+                }
             }).disposed(by: disposeBag)
         
     }
+    
+    func findPW() -> Observable<Result> {
+        
+        return Observable.create {[unowned self] observer in
+            var responseOutput = Result()
+            signUpAPI.request(.passwordChange(phNum: user.phNum, newPassword: user.password)) { result in
+                switch result {
+                case .success(let response):
+                    let jsonDecoder = JSONDecoder()
+                    if let data = try? jsonDecoder.decode(DataResponse.self, from: response.data) {
+                        if data.message == "성공" {
+                            observer.onNext(responseOutput)
+                        } else {
+                            let error = SurfMateError(data.code, data.message)
+                            responseOutput.error = error
+                            observer.onNext(responseOutput)
+                        }
+                    }
+                case .failure(_):
+                    let error = SurfMateError.SystemError
+                    responseOutput.error = error
+                    observer.onNext(responseOutput)
+                }
+            }
+            
+            return Disposables.create()
+        }
+        
+    }
+    
     
     
     

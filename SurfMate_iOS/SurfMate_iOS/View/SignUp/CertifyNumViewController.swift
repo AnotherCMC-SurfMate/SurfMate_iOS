@@ -15,16 +15,18 @@ class CertifyNumViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     let vm:CertifyNumViewModel
+    let mode:PWPageMode
     private var timer = Timer()
     
     let backBT = UIButton(type: .custom).then {
         $0.setImage(UIImage(named: "back_bt"), for: .normal)
     }
     
-    let pageLB = UILabel().then {
+    lazy var pageLB = UILabel().then {
         $0.text = "5/7"
         $0.textColor = UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1)
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+        $0.alpha = mode == .SignUp ? 1.0 : 0
     }
     
     let titleLB = UILabel().then {
@@ -59,8 +61,9 @@ class CertifyNumViewController: UIViewController {
     
     let nextBT = SignUpButton(text: "다음")
     
-    init(_ vm: CertifyNumViewModel) {
+    init(_ vm: CertifyNumViewModel, _ mode: PWPageMode) {
         self.vm = vm
+        self.mode = mode
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -206,7 +209,7 @@ extension CertifyNumViewController {
                 if let value {
                     
                     let vm = PasswordSignUpViewModel(value)
-                    let vc = PasswordSignUpViewController(vm)
+                    let vc = PasswordSignUpViewController(vm, self.mode)
                     vc.modalTransitionStyle = .coverVertical
                     vc.modalPresentationStyle = .fullScreen
                     self.navigationController?.pushViewController(vc, animated: true)

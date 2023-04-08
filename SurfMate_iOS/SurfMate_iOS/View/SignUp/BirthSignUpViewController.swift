@@ -292,7 +292,8 @@ extension BirthSignUpViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else {return false}
+        
+        guard let text = textField.text else { return false }
             
         let maxLength = textField == yearTextField ? 4 : 2
         

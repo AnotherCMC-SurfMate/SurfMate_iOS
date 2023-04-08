@@ -12,6 +12,7 @@ import RxSwift
 enum SignUpAPI {
     case checkAcount(num: String)
     case checkNickname(name: String)
+    case passwordChange(phNum: String, newPassword: String)
     case signup(user: User)
 }
 
@@ -29,11 +30,20 @@ extension SignUpAPI:TargetType {
             return "/auth/check/nickname"
         case .signup(_):
             return "/auth/signup"
+        case .passwordChange(_, _):
+            return "/auth/password/change"
         }
     }
     
     var method: Moya.Method {
-        return .post
+        
+        switch self {
+        case .passwordChange(_, _):
+            return .put
+        default:
+            return .post
+        }
+        
     }
     
     
@@ -69,7 +79,13 @@ extension SignUpAPI:TargetType {
                                                "birthDay":user.birthDay,
                                                "username":user.username]
                 return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+                
             }
+        case .passwordChange(let phNum, let newPassword):
+            let parameters:[String:Any] = ["phNum": phNum,
+                                           "newPassword": newPassword]
+            
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
        
     }

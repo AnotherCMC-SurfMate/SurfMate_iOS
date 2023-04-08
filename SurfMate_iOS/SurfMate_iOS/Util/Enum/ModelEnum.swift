@@ -22,3 +22,8 @@ enum AlertAction {
     case goToLogin
     case next
 }
+
+enum PWPageMode {
+    case SignUp
+    case Change
+}

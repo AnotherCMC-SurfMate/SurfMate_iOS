@@ -67,19 +67,31 @@ extension AlertSheetController {
     
     func setUI() {
         view.backgroundColor = .white
-        view.addSubview(titleLB)
-        titleLB.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(34)
-            $0.centerX.equalToSuperview()
-            $0.height.equalTo(34)
+        
+        if header == "" {
+            view.addSubview(contensLB)
+            contensLB.snp.makeConstraints {
+                $0.top.equalToSuperview().offset(46)
+                $0.centerX.equalToSuperview()
+                $0.height.equalTo(56)
+            }
+        } else {
+            view.addSubview(titleLB)
+            titleLB.snp.makeConstraints {
+                $0.top.equalToSuperview().offset(34)
+                $0.centerX.equalToSuperview()
+                $0.height.equalTo(34)
+            }
+            
+            view.addSubview(contensLB)
+            contensLB.snp.makeConstraints {
+                $0.top.equalTo(titleLB.snp.bottom).offset(12)
+                $0.leading.trailing.equalToSuperview()
+                $0.height.greaterThanOrEqualTo(56)
+            }
         }
         
-        view.addSubview(contensLB)
-        contensLB.snp.makeConstraints {
-            $0.top.equalTo(titleLB.snp.bottom).offset(12)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.greaterThanOrEqualTo(56)
-        }
+        
         
         view.addSubview(confirmBT)
         confirmBT.snp.makeConstraints {

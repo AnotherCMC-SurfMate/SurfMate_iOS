@@ -12,6 +12,7 @@ import RxSwift
 enum SignInAPI {
     case login(user: User)
     case socialLogin(user: User, token: String)
+    case checkAcount(num: String)
     
 }
 
@@ -26,6 +27,9 @@ extension SignInAPI:TargetType {
             return "/auth/login"
         case .socialLogin(_, _):
             return "/auth/social"
+        case .checkAcount(_):
+            return "/auth/check/account"
+        
         }
     }
     
@@ -47,6 +51,11 @@ extension SignInAPI:TargetType {
                                            "provider": user.provider.rawValue,
                                            "fcmToken": user.fcmToken]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
+        case .checkAcount(let num):
+            let parameters:[String:Any] = ["phNum": num]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        
         }
        
     }

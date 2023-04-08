@@ -131,7 +131,7 @@ extension GenderSignUpViewController {
             .drive(onNext: { user in
                 
                 let vm = PhNumSignUpViewModel(user)
-                let vc = PhNumSignUpViewController(vm)
+                let vc = PhNumSignUpViewController(vm, .SignUp)
                 vc.modalTransitionStyle = .crossDissolve
                 vc.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(vc, animated: true)
