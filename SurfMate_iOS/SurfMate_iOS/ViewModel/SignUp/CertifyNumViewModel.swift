@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import FirebaseAuth
+
 class CertifyNumViewModel {
     let user: User
     private let disposeBag = DisposeBag()
@@ -75,6 +76,12 @@ class CertifyNumViewModel {
         
     }
     
+    /**
+     Firebase Auth를 이용한 핸드폰 인증 시도
+     - Parameters:None
+     - Throws: MellyError
+     - Returns:확인코드(String)
+     */
     func getCertifyNum() -> Observable<Result> {
         
         return Observable.create { observer in

@@ -14,7 +14,9 @@ import AuthenticationServices
 
 
 protocol MainLoginViewDelegate: AnyObject {
+    //회원가입 동의 후 회원가입 페이지로 이동하는 함수
     func dismissAgreeNTermsViewController()
+    //일반 로그인 페이지에서 회원가입 동의 sheet으로 이동하는 함수
     func goToAgreeNTermsViewController()
 }
 

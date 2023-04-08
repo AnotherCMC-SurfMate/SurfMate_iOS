@@ -65,6 +65,14 @@ class PhNumSignUpViewModel {
         
     }
     
+    /**
+     해당 핸드폰번호가 유효한지 체크
+        회원가입 : 중복된 계정이 없으면 Success
+        비밀번호 찾기 : 일반 회원으로 가입한 계정이 있으면 Success
+     - Parameters:None
+     - Throws: MellyError
+     - Returns:[String:String]
+     */
     func checkAccount(_ num: String) -> Observable<Result> {
         user.phNum = num
         return Observable.create { observer in

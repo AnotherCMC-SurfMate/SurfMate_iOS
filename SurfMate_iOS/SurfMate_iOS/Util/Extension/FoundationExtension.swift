@@ -37,6 +37,7 @@ extension NSMutableAttributedString {
         case 본문7
     }
     
+    //NSMutableAttributedString 디자인 컴포넌트화(폰트, 크기, 컬러, 자간, 줄간격 설정)
     static func pretendard(_ text:String, _ family:Family, _ color: UIColor) -> NSMutableAttributedString {
         let range = NSRange(location: 0, length: text.count)
         let attributedText = NSMutableAttributedString(string: text)

@@ -42,6 +42,7 @@ extension UIViewController {
         }
     }
     
+    //API통신 시 실행되는 로딩창
     var ApiLoadingView:UIAlertController {
             get {
                 let alert = UIAlertController(title: "", message: nil, preferredStyle: .alert)
@@ -64,6 +65,7 @@ extension UIViewController {
                 return alert
             }
         }
+    
     
     func showErrorAlert(msg: String) {
         let alert = UIAlertController(title: "에러", message: msg, preferredStyle: .alert)

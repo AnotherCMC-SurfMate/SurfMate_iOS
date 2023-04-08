@@ -10,8 +10,11 @@ import Moya
 import RxSwift
 
 enum SignInAPI {
+    //일반 로그인
     case login(user: User)
+    //소셜 로그인
     case socialLogin(user: User, token: String)
+    //핸드폰 번호 확인
     case checkAcount(num: String)
     
 }

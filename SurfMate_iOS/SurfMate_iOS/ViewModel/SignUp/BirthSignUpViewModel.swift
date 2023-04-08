@@ -62,10 +62,13 @@ class BirthSignUpViewModel {
         
     }
     
+    /**
+     다음 버튼 enable 체크
+     - Parameters:None
+     - Returns:Bool
+     */
     func isAble() -> Bool {
-        
         return birth[0].count == 4 && birth[1].count == 2 && birth[2].count == 2
-        
     }
     
 }

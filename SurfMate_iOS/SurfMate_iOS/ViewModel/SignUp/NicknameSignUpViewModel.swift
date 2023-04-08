@@ -58,7 +58,15 @@ class NicknameSignUpViewModel {
         
     }
     
-    
+    /**
+     닉네임 체크 함수
+        -2글자 이상인지 확인
+        -중복된 닉네임이 있는지 API 통신
+     - Parameters:
+        - name(String): 닉네임
+     - Throws: MellyError
+     - Returns:String
+     */
     func checkNickName(_ name:String) -> Observable<Result> {
         
         var response = Result()
@@ -108,8 +116,14 @@ class NicknameSignUpViewModel {
         
     }
     
+    /**
+     회원가입 API 실행
+     - Parameters:None
+     - Throws: MellyError
+     - Returns:??
+     */
     func signUp() -> Observable<Result> {
-        print(user)
+        
         return Observable.create { observer in
             var responseOutput = Result()
             self.signUpAPI.request(.signup(user: self.user)) { result in
@@ -117,8 +131,6 @@ class NicknameSignUpViewModel {
                 case .success(let response):
                     let jsonDecoder = JSONDecoder()
                     if let data = try? jsonDecoder.decode(DataResponse.self, from: response.data) {
-                        
-                        print(data)
                         if data.message == "성공" {
                             observer.onNext(responseOutput)
                         } else {

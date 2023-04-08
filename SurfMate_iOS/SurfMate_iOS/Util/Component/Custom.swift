@@ -133,7 +133,8 @@ extension DefaultTextField: UITextFieldDelegate {
     
 }
 
-class SignUpButton: UIButton {
+//회원가입시 사용하는 버튼
+final class SignUpButton: UIButton {
     
     override var isEnabled: Bool {
         didSet {
@@ -167,7 +168,6 @@ class SignUpButton: UIButton {
     convenience init(text: String) {
         self.init()
         self.text = text
-        
         let attributedText = NSMutableAttributedString(string: text)
         attributedText.addAttribute(.foregroundColor, value: UIColor(red: 0.565, green: 0.576, blue: 0.592, alpha: 1), range: NSRange(location: 0, length: text.count))
         attributedText.addAttribute(.font, value: UIFont.pretendard(size: 18, family: .bold), range: NSRange(location: 0, length: text.count))

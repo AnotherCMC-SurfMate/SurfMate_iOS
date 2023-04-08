@@ -11,12 +11,18 @@ import RxCocoa
 import RxSwift
 
 protocol AlertSheetDelegate: AnyObject {
-    
+    //Sheet이 종료되면 해당 action에 맞는 함수 실행
     func dismissAction(_ action: AlertAction)
-    
 }
 
-class AlertSheetController: UIViewController {
+/**
+ SurfMate 기본 Alert 창
+ - Parameters
+    -header: String(헤더 레이블 텍스트)
+    -contents:String(바디 레이블 텍스트)
+    -alertAction:AlertAction(동작정의)
+ */
+final class AlertSheetController: UIViewController {
     
     private let disposeBag = DisposeBag()
     var delegate:AlertSheetDelegate?

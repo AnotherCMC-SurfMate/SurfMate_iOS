@@ -9,6 +9,7 @@ import Foundation
 import Moya
 import RxSwift
 
+//API 상태확인
 enum HealthAPI {
     case health
 }

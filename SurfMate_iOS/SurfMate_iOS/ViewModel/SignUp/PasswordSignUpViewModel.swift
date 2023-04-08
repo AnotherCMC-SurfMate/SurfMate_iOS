@@ -94,6 +94,12 @@ class PasswordSignUpViewModel {
         
     }
     
+    /**
+     비밀번호 변경 API 통신
+     - Parameters:None
+     - Throws: MellyError
+     - Returns:None
+     */
     func findPW() -> Observable<Result> {
         
         return Observable.create {[unowned self] observer in

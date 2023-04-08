@@ -275,11 +275,13 @@ extension BirthSignUpViewController {
 
 extension BirthSignUpViewController: UITextFieldDelegate {
     
+    //TextField에 포커싱이 감지될 때 label 컬러 변경
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         tfLB.textColor = UIColor.mainColor
         return true
     }
     
+    //TextField에 포커싱이 빠져나갈 때 text에 따라 text컬러 변경
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
         if textField.text == "" {
@@ -291,6 +293,7 @@ extension BirthSignUpViewController: UITextFieldDelegate {
         return true
     }
     
+    //TextField에 따라 최대 글자수 변경
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard let text = textField.text else { return false }

@@ -10,9 +10,13 @@ import Moya
 import RxSwift
 
 enum SignUpAPI {
+    //핸드폰 번호확인
     case checkAcount(num: String)
+    //닉네임 중복확인
     case checkNickname(name: String)
+    //비밀번호 변경
     case passwordChange(phNum: String, newPassword: String)
+    //회원가입
     case signup(user: User)
 }
 

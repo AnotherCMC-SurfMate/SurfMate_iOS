@@ -240,6 +240,7 @@ extension CertifyNumViewController {
         
     }
     
+    //인증번호 요청시 최대 대기시간 3분으로 조정
     private func setTimer() {
         
         timer.invalidate()
