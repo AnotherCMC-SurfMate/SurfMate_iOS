@@ -22,10 +22,11 @@ class PhNumSignUpViewController: UIViewController {
         $0.setImage(UIImage(named: "back_bt"), for: .normal)
     }
     
-    let pageLB = UILabel().then {
+    lazy var pageLB = UILabel().then {
         $0.text = "4/7"
         $0.textColor = UIColor(red: 0.741, green: 0.749, blue: 0.757, alpha: 1)
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+        $0.alpha = mode == .SignUp ? 1.0 : 0
     }
     
     lazy var titleLB = UILabel().then {
@@ -190,26 +191,66 @@ extension PhNumSignUpViewController: AlertSheetDelegate {
             }).disposed(by: disposeBag)
         
         vm.output.successValue
-            .subscribe(onNext: { value in
+            .subscribe(onNext: {[unowned self] value in
                 
                 if let value {
-                    let vc = AlertSheetController(header: "🧐", contents: "\(self.vm.user.username)님은\n\(value) 소셜 회원으로\n가입하신 기록이 있습니다.", alertAction: .goToLogin)
-                    vc.delegate = self
-                    vc.sheetPresentationController?.detents = [
-                        .custom(resolver: { context in
-                            330
-                        })
-                    ]
-                    self.present(vc, animated: true)
+                    
+                    if value != "NORMAL" {
+                        let vc = AlertSheetController(header: "🧐", contents: "\(self.vm.user.username)님은\n\(value) 소셜 회원으로\n가입하신 기록이 있습니다.", alertAction: .goToLogin)
+                        vc.delegate = self
+                        vc.sheetPresentationController?.detents = [
+                            .custom(resolver: { context in
+                                330
+                            })
+                        ]
+                        self.present(vc, animated: true)
+                    } else {
+                        
+                        if mode == .SignUp {
+                            let vc = AlertSheetController(header: "🧐", contents: "이미 회원가입한 계정입니다.", alertAction: .goToLogin)
+                            vc.delegate = self
+                            vc.sheetPresentationController?.detents = [
+                                .custom(resolver: { context in
+                                    330
+                                })
+                            ]
+                            self.present(vc, animated: true)
+                        } else {
+                            let vc = AlertSheetController(header: "📩", contents: "인증번호가 발송되었습니다. 3분 안에\n인증번호를 입력해주세요.", alertAction: .next)
+                            vc.delegate = self
+                            vc.sheetPresentationController?.detents = [
+                                .custom(resolver: { context in
+                                    290
+                                })
+                            ]
+                            self.present(vc, animated: true)
+                        }
+                        
+                    }
+                    
                 } else {
-                    let vc = AlertSheetController(header: "📩", contents: "인증번호가 발송되었습니다. 3분 안에\n인증번호를 입력해주세요.", alertAction: .next)
-                    vc.delegate = self
-                    vc.sheetPresentationController?.detents = [
-                        .custom(resolver: { context in
-                            290
-                        })
-                    ]
-                    self.present(vc, animated: true)
+                    
+                    switch mode {
+                    case .SignUp:
+                        let vc = AlertSheetController(header: "📩", contents: "인증번호가 발송되었습니다. 3분 안에\n인증번호를 입력해주세요.", alertAction: .next)
+                        vc.delegate = self
+                        vc.sheetPresentationController?.detents = [
+                            .custom(resolver: { context in
+                                290
+                            })
+                        ]
+                        self.present(vc, animated: true)
+                    case .Change:
+                        let vc = AlertSheetController(header: "🧐", contents: "존재하지 않는 계정입니다.", alertAction: .normal)
+                        vc.delegate = self
+                        vc.sheetPresentationController?.detents = [
+                            .custom(resolver: { context in
+                                290
+                            })
+                        ]
+                        self.present(vc, animated: true)
+                    }
+                    
                 }
                 
             }).disposed(by: disposeBag)

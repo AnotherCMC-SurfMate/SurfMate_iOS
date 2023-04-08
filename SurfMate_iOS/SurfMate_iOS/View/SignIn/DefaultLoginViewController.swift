@@ -242,33 +242,35 @@ extension DefaultLoginViewController {
                 }
             }).disposed(by: disposeBag)
         
-        RxKeyboard.instance.visibleHeight
-            .skip(1)
-            .drive(onNext: { [unowned self] keyboardVisibleHeight in
-                
-                if keyboardVisibleHeight == 0 {
-                    loginBT.snp.updateConstraints {
-                        $0.top.equalTo(signUpBT.snp.bottom).offset(29)
-                        $0.bottom.equalToSuperview().offset(-10)
-                    }
-                } else {
-                    loginBT.snp.updateConstraints {
-                        $0.top.equalTo(findPwBT.snp.bottom).offset(29)
-                        $0.bottom.equalToSuperview().offset(-10 - keyboardVisibleHeight)
-                    }
-                }
-                
-                view.layoutIfNeeded()
-                
-            }).disposed(by: disposeBag)
+//        RxKeyboard.instance.visibleHeight
+//            .skip(1)
+//            .drive(onNext: { [unowned self] keyboardVisibleHeight in
+//                
+//                if keyboardVisibleHeight == 0 {
+//                    loginBT.snp.updateConstraints {
+//                        $0.top.equalTo(signUpBT.snp.bottom).offset(29)
+//                        $0.bottom.equalToSuperview().offset(-10)
+//                    }
+//                } else {
+//                    loginBT.snp.updateConstraints {
+//                        $0.top.equalTo(findPwBT.snp.bottom).offset(29)
+//                        $0.bottom.equalToSuperview().offset(-10 - keyboardVisibleHeight)
+//                    }
+//                }
+//                
+//                view.layoutIfNeeded()
+//                
+//            }).disposed(by: disposeBag)
         
         findPwBT.rx.tap
             .subscribe(onNext: {
                 let vm = PhNumSignUpViewModel(User())
                 let vc = PhNumSignUpViewController(vm, .Change)
-                vc.modalTransitionStyle = .crossDissolve
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
+                let nav = UINavigationController(rootViewController: vc)
+                nav.modalTransitionStyle = .crossDissolve
+                nav.modalPresentationStyle = .fullScreen
+                nav.setNavigationBarHidden(true, animated: true)
+                self.present(nav, animated: true)
             }).disposed(by: disposeBag)
         
     }

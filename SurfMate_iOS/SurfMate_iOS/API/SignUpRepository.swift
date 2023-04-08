@@ -36,7 +36,14 @@ extension SignUpAPI:TargetType {
     }
     
     var method: Moya.Method {
-        return .post
+        
+        switch self {
+        case .passwordChange(_, _):
+            return .put
+        default:
+            return .post
+        }
+        
     }
     
     
