@@ -37,6 +37,7 @@
 		BF87264A29B1BE2600CAED4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF87264929B1BE2600CAED4D /* LaunchScreen.storyboard */; };
 		BF93248729CD616F003665DA /* CompleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93248629CD616F003665DA /* CompleteSignUpViewController.swift */; };
 		BF9595AC29DEB71700B805C0 /* SignInAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9595AB29DEB71700B805C0 /* SignInAPITest.swift */; };
+		BF9820CD29E2BAC100BF35F8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9820CC29E2BAC100BF35F8 /* OnboardingViewController.swift */; };
 		BFB5E39729C1617A0041A65F /* GenderSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */; };
 		BFB5E39929C161E60041A65F /* GenderSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */; };
 		BFB5E39B29C1749A0041A65F /* PhNumSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E39A29C1749A0041A65F /* PhNumSignUpViewController.swift */; };
@@ -123,6 +124,7 @@
 		BF87264929B1BE2600CAED4D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF93248629CD616F003665DA /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
 		BF9595AB29DEB71700B805C0 /* SignInAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAPITest.swift; sourceTree = "<group>"; };
+		BF9820CC29E2BAC100BF35F8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BFB5E39629C1617A0041A65F /* GenderSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSignUpViewController.swift; sourceTree = "<group>"; };
 		BFB5E39829C161E60041A65F /* GenderSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSignUpViewModel.swift; sourceTree = "<group>"; };
 		BFB5E39A29C1749A0041A65F /* PhNumSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhNumSignUpViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				BF21078529373F7B008E99D2 /* LaunchViewController.swift */,
+				BF9820CC29E2BAC100BF35F8 /* OnboardingViewController.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				BF2895F129C2CF4600177B2A /* AlertSheet.swift in Sources */,
 				BF21078629373F7B008E99D2 /* LaunchViewController.swift in Sources */,
 				BFD6639F299B7F0100A7BC5D /* UIKitExtension.swift in Sources */,
+				BF9820CD29E2BAC100BF35F8 /* OnboardingViewController.swift in Sources */,
 				BFEDD41929C0226100A87ED4 /* BirthSignUpViewController.swift in Sources */,
 				BF8230F029C42899003F2F0C /* PasswordSignUpViewModel.swift in Sources */,
 				BF28F8C629B96D290044986F /* NameSignUpViewController.swift in Sources */,
