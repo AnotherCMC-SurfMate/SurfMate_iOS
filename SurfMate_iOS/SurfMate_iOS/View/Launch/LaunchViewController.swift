@@ -11,24 +11,42 @@ import SnapKit
 
 class LaunchViewController: UIViewController {
     
+    let logoImageView = UIImageView().then {
+        $0.backgroundColor = .gray
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = .white
-        
-        
-        
+        setUI()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            let vc = MainLoginViewController()
+            let vc = OnboardingViewController()
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true)
         }
+    }
+    
+    
+    
+}
+
+extension LaunchViewController{
+    
+    func setUI() {
+        view.backgroundColor = .white
+        
+        view.addSubview(logoImageView)
+        logoImageView.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+            $0.width.height.equalTo(192)
+        }
+        
+        
     }
     
     
