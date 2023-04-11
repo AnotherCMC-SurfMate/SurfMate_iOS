@@ -24,7 +24,7 @@ class LaunchViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            let vc = OnboardingViewController()
+            let vc = AccessRightsViewController()
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true)
