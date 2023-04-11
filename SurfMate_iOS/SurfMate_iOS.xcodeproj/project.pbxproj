@@ -30,6 +30,7 @@
 		BF36C90929CBEE29003D4811 /* NicknameSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36C90829CBEE29003D4811 /* NicknameSignUpViewModel.swift */; };
 		BF42D9E329B8654C000491DE /* AgreeNTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */; };
 		BF42D9E629B87316000491DE /* AgreeNTermViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */; };
+		BF43731D29E3A3D400C382C2 /* AccessRightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43731C29E3A3D400C382C2 /* AccessRightsViewController.swift */; };
 		BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */; };
 		BF5B39AA296E4FEC009ED5DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */; };
 		BF8230EE29C4287A003F2F0C /* PasswordSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8230ED29C4287A003F2F0C /* PasswordSignUpViewController.swift */; };
@@ -117,6 +118,7 @@
 		BF36C90829CBEE29003D4811 /* NicknameSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameSignUpViewModel.swift; sourceTree = "<group>"; };
 		BF42D9E229B8654C000491DE /* AgreeNTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeNTermViewController.swift; sourceTree = "<group>"; };
 		BF42D9E529B87316000491DE /* AgreeNTermViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeNTermViewModel.swift; sourceTree = "<group>"; };
+		BF43731C29E3A3D400C382C2 /* AccessRightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessRightsViewController.swift; sourceTree = "<group>"; };
 		BF4F31022999CD5B00D9B0F3 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
 		BF5B39A9296E4FEC009ED5DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF8230ED29C4287A003F2F0C /* PasswordSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignUpViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			children = (
 				BF21078529373F7B008E99D2 /* LaunchViewController.swift */,
 				BF9820CC29E2BAC100BF35F8 /* OnboardingViewController.swift */,
+				BF43731C29E3A3D400C382C2 /* AccessRightsViewController.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				BFB5E39B29C1749A0041A65F /* PhNumSignUpViewController.swift in Sources */,
 				BF4F31032999CD5B00D9B0F3 /* SignInRepository.swift in Sources */,
 				BF42D9E629B87316000491DE /* AgreeNTermViewModel.swift in Sources */,
+				BF43731D29E3A3D400C382C2 /* AccessRightsViewController.swift in Sources */,
 				BFB5E39729C1617A0041A65F /* GenderSignUpViewController.swift in Sources */,
 				BFB5E39929C161E60041A65F /* GenderSignUpViewModel.swift in Sources */,
 				BF8230EE29C4287A003F2F0C /* PasswordSignUpViewController.swift in Sources */,
